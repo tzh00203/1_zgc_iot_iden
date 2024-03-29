@@ -1,0 +1,15 @@
+2023-12-26 Tuesday 14:37:24  __log.py : DEBUG  logger debug message
+2023-12-26 Tuesday 14:37:24  __log.py : INFO  logger info message
+2023-12-26 Tuesday 14:37:24  __log.py : WARNING  logger warning message
+2023-12-26 Tuesday 14:37:24  __log.py : ERROR  logger error message
+2023-12-26 Tuesday 14:37:24  __log.py : CRITICAL  logger critical message
+2023-12-26 Tuesday 14:39:56  __log.py : DEBUG  logger debug message
+2023-12-26 Tuesday 14:39:56  __log.py : INFO  logger info message
+2023-12-26 Tuesday 14:39:56  __log.py : WARNING  logger warning message
+2023-12-26 Tuesday 14:39:56  __log.py : ERROR  logger error message
+2023-12-26 Tuesday 14:39:56  __log.py : CRITICAL  logger critical message
+2023-12-26 Tuesday 14:40:11  __log.py : DEBUG  logger debug message
+2023-12-26 Tuesday 14:40:11  __log.py : INFO  logger info message
+2023-12-26 Tuesday 14:40:11  __log.py : WARNING  logger warning message
+2023-12-26 Tuesday 14:40:11  __log.py : ERROR  logger error message
+2023-12-26 Tuesday 14:40:11  __log.py : CRITICAL  logger critical message
