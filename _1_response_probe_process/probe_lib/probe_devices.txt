@@ -1,0 +1,51 @@
+fofa:
+printers&copiers
+router
+cameras and surveillance
+ethernet switch
+ADSL
+gateway
+household appliance
+VOIP
+mobile&business AP
+NVR
+DVR
+NAS
+
+Zoomeye:
+网关
+专用交换机
+工控设备
+网络摄像头
+录像机
+路由器
+打印机
+交换机
+触摸屏
+无线网关
+电话交换机
+网络电话交换机
+其它物联网设备
+
+SOTA:
+Camera
+IPCam
+NetCam
+Cam
+DVR
+Router
+NVR
+NVS
+Video Server
+Video Encoder
+Video Recorder
+DiskStation
+RackStation
+Printer
+Copier
+Scanner
+Switches
+Modem
+Switch
+Gateway
+Access Point

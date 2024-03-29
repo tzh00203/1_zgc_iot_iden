@@ -1,0 +1,10 @@
+# 54.91.78.138 1494
+# fofa: protocol="citrix-ica"
+name: "citrix-ica"
+ports:
+  tcp: [1494]
+rules:
+- payload: "test"
+  patterns:
+  - type: regex
+    pattern: ICA\x00

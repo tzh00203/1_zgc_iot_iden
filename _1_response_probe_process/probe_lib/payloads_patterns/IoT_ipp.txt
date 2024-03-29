@@ -1,0 +1,129 @@
+{
+    "payloads": [
+        "Probe TCP GetRequest q|GET / HTTP/1.0\\r\\n\\r\\n|",
+        "Probe TCP HTTPOptions q|OPTIONS / HTTP/1.0\\r\\n\\r\\n|",
+        "Probe TCP Help q|HELP\\r\\n|"
+    ],
+    "patterns": [
+        {
+            "type": "response",
+            "pattern": "HTTP/1.0 200 OK\r\nDate: Mon, 18 Dec 2023 08:21:49 GMT\r\nServer: CUPS/1.7 IPP/2.1\r\nContent-Language: en_US\r\nContent-Type: text/html; charset=utf-8\r\nLast-Modified: Mon, 19 Nov 2018 12:43:48 GMT\r\nContent-Length: 3784\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n\t<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\">\n\t<TITLE>Home - CUPS 1.7.2</TITLE>\n\t<LINK REL=\"STYLESHEET\" TYPE=\"text/css\" HREF=\"/cups.css\">\n\t<LINK REL=\"SHORTCUT ICON\" HREF=\"/images/cups-icon.png\" TYPE=\"image/png\">\n</HEAD>\n<BODY>\n<TABLE CLASS=\"page\" SUMMARY=\"{title}\">\n<TR><TD CLASS=\"body\">\n<TABLE BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\" SUMMARY=\"\">\n<TR HEIGHT=\"36\">\n<TD><A HREF=\"http://www.cups.org/\" TARGET=\"_blank\"><IMG\nSRC=\"/images/left.gif\" WIDTH=\"64\" HEIGHT=\"36\" BORDER=\"0\" ALT=\"\"></A></TD>\n<TD CLASS=\"sel\"><A HREF=\"/\">&nbsp;&nbsp;Home&nbsp;&nbsp;</A></TD>\n<TD CLASS=\"unsel\"><A HREF=\"/admin\">&nbsp;&nbsp;Administration&nbsp;&nbsp;</A></TD>\n<TD CLASS=\"unsel\"><A HREF=\"/classes/\">&nbsp;&nbsp;Classes&nbsp;&nbsp;</A></TD>\n<TD CLASS=\"unsel\"><A HREF=\"/help/\">&nbsp;&nbsp;Online&nbsp;Help&nbsp;&nbsp;</A></TD>\n<TD CLASS=\"unsel\"><A HREF=\"/jobs/\">&nbsp;&nbsp;Jobs&nbsp;&nbsp;</A></TD>\n<TD CLASS=\"unsel\"><A HREF=\"/printers/\">&nbsp;&nbsp;Printers&nbsp;&nbsp;</A></TD>\n<TD CLASS=\"unsel\" WIDTH=\"100%\"><FORM ACTION=\"/help/\" METHOD=\"GET\"><INPUT\nTYPE=\"SEARCH\" NAME=\"QUERY\" SIZE=\"20\" PLACEHOLDER=\"Search Help\"\nAUTOSAVE=\"org.cups.help\" RESULTS=\"20\"></FORM></TD>\n<TD><IMG SRC=\"/images/right.gif\" WIDTH=\"4\" HEIGHT=\"36\" ALT=\"\"></TD>\n</TR>\n</TABLE>\n\n<TABLE CLASS=\"indent\" SUMMARY=\"\">\n<TR><TD STYLE=\"padding-right: 20px;\">\n\n<H1>CUPS 1.7.2</H1>\n\n<P>CUPS is the standards-based, open source printing system developed by\n<A HREF=\"http://www.apple.com/\">Apple Inc.</A> for OS<SUP>&reg;</SUP> X and\nother UNIX<SUP>&reg;</SUP>-like operating systems.</P>\n\n</TD>\n<TD><A HREF=\"http://www.cups.org/\"><IMG SRC=\"images/cups-icon.png\" WIDTH=\"128\"\nHEIGHT=\"128\" ALT=\"CUPS\"></A></TD>\n</TR>\n</TABLE>\n\n<TABLE CLASS=\"indent\" SUMMARY=\"\">\n<TR><TD VALIGN=\"top\" STYLE=\"border-right: dotted thin #cccccc; padding-right: 20px;\">\n\n<H2>CUPS for Users</H2>\n\n<P><A HREF=\"help/overview.html\">Overview of CUPS</A></P>\n\n<P><A HREF=\"help/options.html\">Command-Line Printing and Options</A></P>\n\n<P><A HREF=\"help/whatsnew.html\">What's New in CUPS 1.7</A></P>\n\n<P><A HREF=\"http://www.cups.org/newsgroups.php?gcups.general\">User Forum</A></P>\n\n</TD><TD VALIGN=\"top\" STYLE=\"border-right: dotted thin #cccccc; padding-left: 20px; padding-right: 20px;\">\n\n<H2>CUPS for Administrators</H2>\n\n<P><A HREF=\"admin\">Adding Printers and Classes</A></P>\n\n<P><A HREF=\"help/policies.html\">Managing Operation Policies</A></P>\n\n<P><A HREF=\"help/accounting.html\">Printer Accounting Basics</A></P>\n\n<P><A HREF=\"help/security.html\">Server Security</A></P>\n\n<P><A HREF=\"help/kerberos.html\">Using Kerberos Authentication</A></P>\n\n<P><A HREF=\"help/network.html\">Using Network Printers</A></P>\n\n<P><A HREF=\"help/ref-cupsd-conf.html\">cupsd.conf Reference</A></P>\n\n<P><A HREF=\"http://www.cups.org/ppd.php\">Find Printer Drivers</A></P>\n\n</TD><TD VALIGN=\"top\" STYLE=\"padding-left: 20px;\">\n\n<H2>CUPS for Developers</H2>\n\n<P><A HREF=\"help/api-overview.html\">Introduction to CUPS Programming</A></P>\n\n<P><A HREF=\"help/api-cups.html\">CUPS API</A></P>\n\n<P><A HREF=\"help/api-filter.html\">Filter and Backend Programming</A></P>\n\n<P><A HREF=\"help/api-httpipp.html\">HTTP and IPP APIs</A></P>\n\n<P><A HREF=\"help/api-ppd.html\">PPD API</A></P>\n\n<P><A HREF=\"help/api-raster.html\">Raster API</A></P>\n\n<P><A HREF=\"help/ref-ppdcfile.html\">PPD Compiler Driver Information File Reference</A></P>\n\n<P><A HREF=\"http://www.cups.org/newsgroups.php?gcups.development\">Developer Forum</A></P>\n\n</TD></TR>\n</TABLE>\n\n</TD></TR>\n<TR><TD>&nbsp;</TD></TR>\n<TR><TD CLASS=\"trailer\">CUPS and the CUPS logo are trademarks of\n<A HREF=\"http://www.apple.com\">Apple Inc.</A> Copyright 2007-2014 Apple\nInc. All rights reserved.</TD></TR>\n</TABLE>\n</BODY>\n</HTML>\n"
+        },
+        {
+            "type": "response",
+            "pattern": "HTTP/1.0 403 Запрещено\r\nContent-Language: ru_RU\r\nContent-Length: 391\r\nContent-Type: text/html; charset=utf-8\r\nDate: Mon, 18 Dec 2023 08:20:03 GMT\r\nAccept-Encoding: gzip, deflate, identity\r\nServer: CUPS/2.3 IPP/2.1\r\nX-Frame-Options: DENY\r\nContent-Security-Policy: frame-ancestors 'none'\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n\t<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\">\n\t<TITLE>Запрещено - CUPS v2.3.3op2</TITLE>\n\t<LINK REL=\"STYLESHEET\" TYPE=\"text/css\" HREF=\"/cups.css\">\n</HEAD>\n<BODY>\n<H1>Запрещено</H1>\n<P>You cannot access this page.</P>\n</BODY>\n</HTML>\n"
+        },
+        {
+            "type": "response",
+            "pattern": "HTTP/1.0 404 Not Found\r\nContent-Language: en_US\r\nContent-Length: 342\r\nContent-Type: text/html; charset=utf-8\r\nDate: Mon, 18 Dec 2023 08:20:31 GMT\r\nAccept-Encoding: gzip, deflate, identity\r\nServer: CUPS/2.1 IPP/2.1\r\nX-Frame-Options: DENY\r\nContent-Security-Policy: frame-ancestors 'none'\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n\t<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\">\n\t<TITLE>Not Found - CUPS v2.1.3</TITLE>\n\t<LINK REL=\"STYLESHEET\" TYPE=\"text/css\" HREF=\"/cups.css\">\n</HEAD>\n<BODY>\n<H1>Not Found</H1>\n<P></P>\n</BODY>\n</HTML>\n"
+        },
+        {
+            "type": "response",
+            "pattern": "HTTP/1.0 404 Not Found\r\nContent-Language: en_US\r\nContent-Length: 342\r\nContent-Type: text/html; charset=utf-8\r\nDate: Mon, 18 Dec 2023 08:19:24 GMT\r\nAccept-Encoding: identity\r\nServer: CUPS/2.1 IPP/2.1\r\nX-Frame-Options: DENY\r\nContent-Security-Policy: frame-ancestors 'none'\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n\t<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\">\n\t<TITLE>Not Found - CUPS v2.1.3</TITLE>\n\t<LINK REL=\"STYLESHEET\" TYPE=\"text/css\" HREF=\"/cups.css\">\n</HEAD>\n<BODY>\n<H1>Not Found</H1>\n<P></P>\n</BODY>\n</HTML>\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 505 HTTP Version Not Supported\\r\\nServer: HP HTTP Server; HP ([^;]+?) - (\\w+); Serial Number: (\\w+); (?:[\\w_]+ )?Built:[^{]+ {\\w+, ASIC id 0x[\\da-f]+}\\r\\n\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 \\d\\d\\d .*<TITLE>Home - CUPS ([\\d.]+)</TITLE>.*SUMMARY=\\\"Common UNIX Printing System"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 \\d\\d\\d (?:[^\\r\\n]*\\r\\n(?!\\r\\n))*?Server: CUPS/([-\\w_.]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^lpd \\[@[-.\\w]+\\]: Host name for your address \\([:.\\d]+\\) is not known\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 \\d\\d\\d .*\\r\\nDate: .*\\r\\nServer: EPSON-IPP/([\\d.]+)\\r\\nContent-Type: application/ipp\\r\\nContent-Length: \\d+\\r\\n\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 411 Length Required\\r\\nSERVER: EpsonNet IPP-SERVER/([\\w._-]+)\\r\\nCONTENT-LENGTH: 0\\r\\n\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 404 Not Found\\r\\nCache-Control: no-cache\\r\\nDate: .*\\r\\nPragma: no-cache\\r\\nContent-Type: text/html\\r\\nContent-Length: 91\\r\\nServer: Web-Server/([\\d.]+)\\r\\n\\r\\n<HTML><HEAD><TITLE>404 Not Found</TITLE></HEAD>\\n<BODY><H1>404 Not Found</H1></BODY></HTML>\\0"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 404 Not Found\\r\\nConnection: close\\r\\nContent-Type: text/html\\r\\nContent-Length: 89\\r\\nServer: Web-Server/([\\d.]+)\\r\\n\\r\\n<html><head><title>404 Not Found</title></head><body><h1>404 Not Found</h1></body></html>$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 \\d\\d\\d .*\\r\\nDate: .*\\r\\nServer: CANON HTTP Server Ver(\\d[-.\\w ]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 \\d\\d\\d .*\\r\\nDate: .*\\r\\nServer: Canon Http Server (\\d[-.\\w ]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 200 OK\\r\\nContent-Type: text/html\\r\\n\\r\\n<HTML><HEAD><META HTTP-EQUIV=\\\"Content-type\\\" CONTENT=\\\"text/html; charset=iso-8859-1\\\">\\r\\n<TITLE>IBM Infoprint Color (\\d+)</TITLE>"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 301 Moved Permanently\\r\\nServer: Virata-EmWeb/R([\\w_]+)\\r\\nLocation: https://[\\d.]+/\\r\\nContent-Type: text/html\\r\\nContent-Length: 90\\r\\n\\r\\nMoved\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 \\d\\d\\d .*\\r\\nContent-Type: text/html\\r\\n\\r\\n<HTML><HEAD><META HTTP-EQUIV=\\\"Content-type\\\" CONTENT=\\\"text/html; charset=iso-8859-1\\\">\\r\\n<TITLE>Dell Laser Printer 1700n</TITLE>"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 \\d\\d\\d .*<TITLE>Common UNIX Printing System</TITLE>.*HREF=\\\"http://www\\.easysw\\.com\\\" ALT=\\\"Easy Software Products Home Page\\\">\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^<HEAD><TITLE>Not Found</TITLE></HEAD><BODY><H1><B>Not Found</B></H1><P>The requested URL \\\"\\\"was not found on this server\\.</BODY>\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 400 Bad Request\\r\\nConnection: close\\r\\nContent-Type: text/html\\r\\n(?:; charset=utf-8)?\\r\\nContent-Length: \\d+\\r\\nCache-Control: (?:max-age=0, no-store, )?no-cache\\r\\n\\r\\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3\\.2//EN\">\\n<HTML>\\n<HEAD>\\n<TITLE>Invalid Request</TITLE>\\n</HEAD>\\n\\n<BODY BGCOLOR=\"#FFFFFF\" TEXT=\"#000000\">\\n<CENTER>\\n<FONT SIZE=\"\\+2\" COLOR=\"#FFFFFF\" ALIGN=\"Center\">\\n</FONT>\\n<B>Invalid Request\\. Some Error</B>\\n</BODY>\\n\\n</HTML>\\n\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 404 Not found\\r\\n\\r\\n404 Not found$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 404 Not Found\\r\\nDate: .*\\r\\nContent-Language: C\\r\\nUpgrade: TLS/1\\.0,HTTP/1\\.1\\r\\nConnection: close\\r\\nContent-Type: text/html\\r\\nContent-Length: 138\\r\\n\\r\\n<HTML><HEAD><TITLE>404 Not Found</TITLE></HEAD><BODY><H1>Not Found</H1>The requested resource was not found on this server\\.</BODY></HTML>\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 200 OK\\r\\nPragma: no-cache\\r\\nConnection: close\\r\\nContent-Type: text/html\\r\\n\\r\\n<HTML><HEAD><META HTTP-EQUIV=\\\"REFRESH\\\" CONTENT=\\\"0; URL=http://[\\d.]+/\\\"></HEAD><BODY><P>For more printserver info please open the <A HREF=\\\"http://[\\d.]+/\\\">[\\d.]+</A> home page</BODY></HTML>$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 405 Method Not Allowed\\r\\nContent-Type: text/html\\r\\nCache-Control: public,max-age=86400\\r\\nPragma: cache\\r\\nExpires: .*\\r\\nDate: .*\\r\\nLast-Modified: .*\\r\\nAccept-Ranges: bytes\\r\\nConnection: close\\r\\n\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 200 OK\\r\\nContent-Type: text/plain; charset=UTF-8\\r\\n\\r\\nreturn_code=FCS9015\\?error_text=This server does not support this API\\."
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 301 Moved Permanently\\r\\nDate: .*\\r\\nPragma: no-cache\\r\\nLocation: http:///\\r\\nContent-Length: 109\\r\\nContent-Type: text/html\\r\\n\\r\\n<html><head><title>301 Moved Permanently</title></head>\\t\\t<body><h1>301 Moved Permanently</h1></body></html>\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 403 Forbidden\\r\\nConnection: close\\r\\nContent-Type: text/html\\r\\nContent-Length: 89\\r\\nServer: Web-Server/3\\.0\\r\\n\\r\\n<html><head><title>403 Forbidden</title></head><body><h1>403 Forbidden</h1></body></html>"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 400 Bad Request\\r\\nContent-Length: 29\\r\\nContent-Type: text/html\\r\\nConnection: close\\r\\n\\r\\n 400 Bad Request from Browser"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.0 \\d\\d\\d (?:[^\\r\\n]*\\r\\n(?!\\r\\n))*?Server: CUPS/([-\\w_.]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^HTTP/1\\.1 405 Method Not Allowed\\r\\nContent-Length: 23\\r\\nContent-Type: text/html\\r\\nUpgrade: TLS/1\\.0\\r\\n\\r\\n 405 Method Not Allowed"
+        }
+    ]
+}

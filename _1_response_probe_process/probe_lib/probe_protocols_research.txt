@@ -1,0 +1,36 @@
+general:
+
+routing:
+RIP、IGRP（Cisco私有协议）、EIGRP（Cisco私有协议）、OSPF、IS-IS、BGP
+
+printer:
+LPD
+IPP		protocol_type_sinan_extend_ports.json 中有
+CUPS
+PJL
+IR-Alerts
+
+IoT application protocols:
+CoAP yes
+XMPP yes
+HTTP yes
+MQTT yes
+Web Socket yes
+AMQP yes
+LWM2M yes
+STOMP yes
+(加权判断，包括打印机的，在frame中的"特征提取"处理)
+CASE：
+	LTPD协议跟打印机有关，但ARE方法无法获取该信息
+
+
+vendor private protocol:
+Hikvisin   		public dataset
+Cisco 		wireshark； public dataset 
+Dahua		Dataset； 
+Dji		private dataset
+Zebra(printer) 	Dataset、、
+
+
+
+

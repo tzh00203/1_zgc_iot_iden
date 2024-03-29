@@ -1,0 +1,16 @@
+{
+    "payloads": [
+        "Probe UDP xdmcp q|\\0\\x01\\0\\x02\\0\\x01\\0|",
+        "Probe UDP coap-request q|@\\x01\\x01\\xce\\xbb.well-known\\x04core|"
+    ],
+    "patterns": [
+        {
+            "type": "perl",
+            "pattern": "^`E"
+        },
+        {
+            "type": "perl",
+            "pattern": "^`E"
+        }
+    ]
+}

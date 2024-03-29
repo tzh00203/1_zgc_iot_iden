@@ -1,0 +1,31 @@
+{
+    "payloads": [
+        "Probe TCP NULL q||"
+    ],
+    "patterns": [
+        {
+            "type": "response_qax",
+            "pattern": "Vty password is not set.\r\n"
+        },
+        {
+            "type": "response_real",
+            "pattern": "Vty password is not set."
+        },
+        {
+            "type": "perl",
+            "pattern": "^\\r\\nHello, this is zebra \\(version (\\d[-.\\w]+)\\)\\.\\r\\nCopyright 1996-20"
+        },
+        {
+            "type": "perl",
+            "pattern": "^\\r\\nHello, this is zebra \\(version (\\d[-.\\w]+)\\)\\.\\r\\nCopyright 200\\d"
+        },
+        {
+            "type": "perl",
+            "pattern": "^Vty password is not set\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^\\r\\nUser Access Verification\\r\\n\\r\\n\\xff\\xfb\\x01\\xff\\xfb\\x03\\xff\\xfe\\\"\\xff\\xfd\\x1fPassword: "
+        }
+    ]
+}

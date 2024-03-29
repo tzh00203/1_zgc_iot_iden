@@ -1,0 +1,15 @@
+# fofa查询语法：protocol=="citrix_licensing"
+# 210.202.84.46 7788
+name: "citrix_licensing"
+ports:
+  tcp: [7788]
+guess_ports:
+  tcp: [8081, 8090, 8091, 2000, 21, 5000]
+
+rules:
+- strategy:
+    read_timeout: 10000
+  payload: "GET / HTTP/1.0\r\n\r\n"
+  patterns:
+  - type: prefix
+    pattern: "WW\x00\x00"

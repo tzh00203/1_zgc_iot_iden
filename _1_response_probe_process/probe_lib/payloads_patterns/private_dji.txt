@@ -1,0 +1,9 @@
+{
+    "payloads": [],
+    "patterns": [
+        {
+            "type": "response_qax",
+            "pattern": "Flags: 0x08\nSequence: 0\nCheckSum: 0xea\n"
+        }
+    ]
+}

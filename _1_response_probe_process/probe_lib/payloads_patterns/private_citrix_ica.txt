@@ -1,0 +1,11 @@
+{
+    "payloads": [
+        "test",
+    ],
+    "patterns": [
+        {
+            "type": "regex",
+            "pattern": "ICA\x00"
+        }
+    ]
+}

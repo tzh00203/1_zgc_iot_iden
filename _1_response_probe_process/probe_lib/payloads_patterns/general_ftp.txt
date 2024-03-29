@@ -1,0 +1,3135 @@
+{
+    "payloads": [
+        "Probe TCP NULL q||",
+        "Probe TCP GenericLines q|\\r\\n\\r\\n|",
+        "Probe TCP Help q|HELP\\r\\n|",
+        "Probe TCP SSLSessionReq q|\\x16\\x03\\0\\0S\\x01\\0\\0O\\x03\\0?G\\xd7\\xf7\\xba,\\xee\\xea\\xb2`~\\xf3\\0\\xfd\\x82{\\xb9\\xd5\\x96\\xc8w\\x9b\\xe6\\xc4\\xdb<=\\xdbo\\xef\\x10n\\0\\0(\\0\\x16\\0\\x13\\0\\x0a\\0f\\0\\x05\\0\\x04\\0e\\0d\\0c\\0b\\0a\\0`\\0\\x15\\0\\x12\\0\\x09\\0\\x14\\0\\x11\\0\\x08\\0\\x06\\0\\x03\\x01\\0|",
+        "Probe TCP SMBProgNeg q|\\0\\0\\0\\xa4\\xff\\x53\\x4d\\x42\\x72\\0\\0\\0\\0\\x08\\x01\\x40\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\x40\\x06\\0\\0\\x01\\0\\0\\x81\\0\\x02PC NETWORK PROGRAM 1.0\\0\\x02MICROSOFT NETWORKS 1.03\\0\\x02MICROSOFT NETWORKS 3.0\\0\\x02LANMAN1.0\\0\\x02LM1.2X002\\0\\x02Samba\\0\\x02NT LANMAN 1.0\\0\\x02NT LM 0.12\\0|"
+    ],
+    "patterns": [
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w]+) FTP server \\(SecureTransport (\\d[-.\\w]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w]+) FTP server \\(SecureTransport (\\d[-.\\w]+)\\) ready\\.    \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 3Com 3CDaemon FTP Server Version (\\d[-.\\w]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 3Com FTP Server Version ([-\\w_.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-GuildFTPd FTP Server \\(c\\) \\d\\d\\d\\d(?:-\\d\\d\\d\\d)?\\r\\n220-Version (\\d[-.\\w]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-.*\\r\\n220 Please enter your name:\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w]+) FTP server \\(Medusa Async V(\\d[^\\)]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w]+)\\((\\d[-.\\w]+)\\) FTP server \\(EPSON ([^\\)]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w]+) IBM TCP/IP for OS/2 - FTP Server [Vv]er \\d+:\\d+:\\d+ on [A-Z]"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w]+) IBM TCP/IP f\\xfcr OS/2 - FTP-Server [Vv]er \\d+:\\d+:\\d+ .* bereit\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Internet Rex (\\d[-.\\w ]+) \\(([-/.+\\w]+)\\) FTP server awaiting your command\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^530 Connection refused, unknown IP address\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 IIS ([\\w._-]+) FTP\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 PizzaSwitch FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w]+) IronPort FTP server \\(V([-.\\w]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w]+) IronPort FTP server \\(V([-.\\w]+)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w]+) Cisco IronPort FTP server \\(V([-.\\w]+)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 WFTPD (\\d[-.\\w]+) service \\(by Texas Imperial Software\\) ready for new user\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*\\r\\n220 WFTPD (\\d[-.\\w]+) service \\(by Texas Imperial Software\\) ready for new user\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w]+) FTP server \\(Version (MICRO-[-.\\w:#+ ]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w]+) FTP server \\(Digital UNIX Version (\\d[-.\\w]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w]+) FTP server \\(Version [\\d.]+\\+Heimdal (\\d[-+.\\w ]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^500 OOPS: (could not bind listening IPv4 socket)\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^500 OOPS: vsftpd: (.*)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-QTCP at ([-.\\w]+)\\r\\n220"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[- ]FileZilla Server version (\\d[-.\\w ]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) running FileZilla Server version (\\d[-.\\w ]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server - FileZilla\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to ([A-Z]+) FTP Service\\.\\r\\n220 All unauthorized access is logged\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*\\r\\n220[- ]FileZilla Server version (\\d[-.\\w ]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-.*\\r\\n220-\\r\\n220 using FileZilla FileZilla Server version ([^\\r\\n]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-FileZilla Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FileZilla Server (\\d[\\w.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^431 Could not initialize SSL connection\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^550 No connections allowed from your IP\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  FTP version 1\\.0 ready at "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP version 1\\.0 ready at "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 \\(none\\) FTP server \\(GNU inetutils ([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server \\(GNU inetutils (\\d[-.\\w ]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server \\(GNU inetutils ([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .* \\(glftpd (\\d[-.0-9a-zA-Z]+)_(\\w+)(?:\\+TLS)?\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .* \\(glFTPd (\\d[-.0-9a-zA-Z]+)_(\\w+) Linux\\+TLS\\) ready\\.?\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .* \\(glFTPd (\\d[-.0-9a-zA-Z]+) Linux\\+TLS\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .* \\(glFTPd (\\d[-.0-9a-zA-Z]+) FreeBSD\\+TLS\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server \\(FirstClass v(\\d[-.\\w]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server \\(Compaq Tru64 UNIX Version (\\d[-.\\w]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Axis ([\\w._ -]+) Network Camera(?: version)? (\\d\\S+) \\((.*)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Axis ([\\w._ -]+) Network Camera ([\\w._-]+ \\(\\w+ \\d+ \\d+\\)) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS ([\\w._ -]+) Network Camera ([\\w._-]+ \\(\\w+ \\d+ \\d+\\)) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Axis ([\\w._ -]+) Network Camera ([\\w._-]+) \\w+ \\d+ \\d+ ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS ([\\w._ -]+) Video Encoder ([\\w._-]+ \\(\\w+ \\d+ \\d+\\)) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS ([-.\\w]+) FTP Network Print Server V(\\d[-.\\w]+) [A-Z][a-z]"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS ([\\d\\w]+)V(\\d\\S+) (.*?) ready\\.\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS ([+\\d]+) Video Server ?(\\d\\S+) (.*?) ready\\."
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS (\\w+) Video Server (\\d\\S+) \\(.*\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS 205 version ([\\d.]+) \\(.*\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS 250S MPEG-2 Video Server ([\\d.]+) \\([^)]+\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS (\\w+) Video Server ([\\d.]+) \\([^)]+\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS (\\w+) Video Server Blade ([\\w._-]+) \\([^)]+\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS StorPoint CD E100 CD-ROM Server V([\\d.]+) .*  ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS (.+) FTP Network Print Server V([-\\w_.]+) "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS ([\\d/+]+) FTP Print Server V([-\\w_.]+) "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS (\\w+) Network Fixed Dome Camera (.*) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Cerberus FTP Server Personal Edition\\r\\n220-UNREGISTERED\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Cerberus FTP Server - Personal Edition\\r\\n220-This is the UNLICENSED personal edition and may be used for home, personal use only\\r\\n220-Welcome to Cerberus FTP Server\\r\\n220 Created by Cerberus, LLC\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Cerberus FTP Server - Personal Edition\\r\\n220-This is the UNLICENSED personal edition and may be used for home, personal use only\\r\\n220 Connected to Aurora FTP server\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Cerberus FTP Server - Personal Edition\\r\\n220-UNREGISTERED\\r\\n220-Welcome to Cerberus FTP Server\\r\\n220 Created by Grant Averett\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to Cerberus FTP Server\\r\\n220 Created by Grant Averett\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421-Not currently accepting logins at this address\\. Try back \\r\\n421 later\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welkom@([\\w._-]+)\\r\\n521 Not logged in - Secure authentication required\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP print service:V-(\\d[-.\\w]+)/Use the network password for the ID if updating\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- APC FTP server ready\\.\\r\\n220 \\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w]+) FTP server \\(Version (\\d[\\w._-]+) [A-Z][a-z]{2} [A-Z][a-z]{2} .*\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Serveur FTP ([\\w.-]+) \\(Version ([\\d.]+) [\\w: ]+\\) pr\\xeat\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[- ]Roxen FTP server running on Roxen (\\d[-.\\w]+)/Pike (\\d[-.\\w]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Service ready for new user\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[ -].*FTP server \\(lukemftpd (\\d[-. \\w]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*Microsoft FTP Service \\(Version (\\d[^)]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[ -]Microsoft FTP Service\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[ -]Serv-U FTP[ -]Server v([\\w._-]+) "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Serv-U FTP Server for Winsock\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Serv-U FTP-Server v([-\\w_.]+ build \\d+) for WinSock ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-FTP Server v([\\d.]+) for WinSock ready\\."
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-SECURE FTP SERVER VERSION ([\\d.]+) \\(([-\\w_.]+)\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^431 Unable to negotiate secure command connection\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Sambar FTP Server Version (\\d\\S+)\\x0d\\x0a"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-FTP Server ready\\r\\n220-Use USER user@host for native FTP proxy\\r\\n220 Your FTP Session will expire after 300 seconds of inactivity\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 JD FTP Server Ready"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*Check Point FireWall-1 Secure FTP server running on"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[- ].*FTP server \\(Version (wu-[-.\\w]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\r\\n220 ([-.\\w]+) FTP server \\(Version ([-.+\\w()]+)\\) ready\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server \\(Revision ([\\d.]+) Version wuftpd-([-.+\\w()]+) [^)]*\\) ready\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server \\(Version ([-.+\\w()]+)\\) ready\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  Server \\(ProFTPD\\) \\[([-.\\w]+)\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ProFTPD (\\d\\S+) Server"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server \\[([-\\w_.]+)\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*ProFTP[dD].*Server ready"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ProFTP Server Ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ProFTP Ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome @ my\\.ftp\\.org\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-.*\\r\\n220 ProFTPD ([\\d.]+) Server"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .* FTP Server \\(ProFTPD ([\\d.]+) on Red Hat linux ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ProFTP-Server auf ([-\\w_.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*\\r\\n220 ProFTPD ([\\w._-]+) Server \\(ProFTPD\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server ready!\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server ready\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*NcFTPd Server "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server \\(SunOS 5\\.([789])\\) ready"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server \\(SunOS (\\S+)\\) ready"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-([-.\\w]+) IBM FTP.*(V\\d+R\\d+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-IBM FTP, .*\\.\\r\\n220 Connection will close if idle for more than 120 minutes\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 VxWorks \\((\\d[^)]+)\\) FTP server ready"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 VxWorks \\(VxWorks(\\d[^)]+)\\) FTP server ready"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 VxWorks FTP server \\(VxWorks ?([\\d.]+) - Secure NetLinx version \\(([\\d.]+)\\)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 VxWorks \\(VxWorks ([\\w._-]+)\\) FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 VxWorks FTP server \\(VxWorks ?([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ABB Robotics FTP server \\(VxWorks ([\\d.]+) rev ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*Welcome to .*Pure-?FTPd (\\d\\S+\\s*)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*Welcome to .*Pure-?FTPd[^(]+\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*Bienvenue sur .*Pure-?FTPd.*\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*Bienvenue sur .*Pure-?FTPd (\\d[-.\\w]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*Velkommen til .*Pure-?FTPd.*\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*Bem-vindo.*Pure-?FTPd.*\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[- ]FTP server ready\\.\\r\\n.*214 Pure-FTPd - http://pureftpd\\.org/?\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220---------- Welcome to Pure-FTPd \\[privsep\\] \\[TLS\\] ----------\\r\\n220-You are user number"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220---------- .* Pure-FTPd ----------\\r\\n220-"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*214 Pure-FTPd - http://pureftpd\\.org/?\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 vsFTPd (.*) ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 vsFTPd (.*) ready\\.\\.\\. \\[charset=\\w+\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ready, dude \\(vsFTPd (\\d[0-9.]+): beat me, break me\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 \\(vsFTPd ([-.\\w]+)\\)\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to blah FTP service\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 TYPSoft FTP Server (\\d\\S+) ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-MegaBit Gear (\\S+).*FTP server ready"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*WS_FTP Server (\\d\\S+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Features: a p \\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server \\(Version (\\S+) VFTPD, based on Version (\\S+)\\) ready\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "220 ([-.\\w]+) FTP server \\(Version (\\S+)/OpenBSD, linux port (\\S+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server \\(Version (\\S+)/OpenBSD/Linux-ftpd-([-.\\w]+)\\) ready.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Interscan Version ([-\\w.]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 InterScan FTP VirusWall NT (\\d[-.\\w]+) \\(([-.\\w]+) Mode\\), Virus scan (\\w+)\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server \\(Version ([-.\\w]+)/OpenBSD\\) ready\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server \\(Version (6.0\\w+)\\) ready.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  FTP server \\(Version ([\\w.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Setting memory limit to 1024\\+1024kbytes\\r\\n220-Local time is now \\d+:\\d+ and the load is [\\d.]+\\.\\r\\n220 You will be disconnected after \\d+ seconds of inactivity.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  FTP server \\(Hummingbird Ltd\\. \\(HCLFTPD\\) Version (7.1.0.0)\\) ready\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  FTP server \\(Hummingbird Communications Ltd\\. \\(HCLFTPD\\) Version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- .*\\n220 ([-.\\w]+) FTP server \\(Version (.*)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- \\r\\n.*www\\.imatix\\.com --\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- Welcome to this Xitami FTP server, running version ([\\d\\w.]+) of Xitami\\. \\n You are user number (\\d+) of a permitted (\\d+) users\\."
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Service Ready for new User\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-LRN\\r\\n220 Service Ready for new User\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w]+) FTP server \\(NetWare (v[\\d.]+)\\) ready\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "220  FTP Server for NW 3.1x, 4.xx  \\((v1.10)\\), \\(c\\) 199[0-9] HellSoft\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) MultiNet FTP Server Process V(\\S+) at .+\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\r\\n220 ([-.\\w]+) FTP server \\(NetBSD-ftpd ([-.\\w]+)\\) ready.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) Network Management Card AOS v([-.\\w]+) FTP server ready.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server \\(Version 1.0\\) ready.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w ]+) FTP server \\(Version (\\d[-.\\w]+) [A-Z][a-z]{2} [A-Z].*20\\d\\d\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w ]+) FTP server \\(Version (\\d[-.\\w]+)\\(([^\\)]+)\\) [A-Z][a-z]{2} [A-Z].*\\d{4}\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-.*\\r\\n(?:220-|)    WarFTPd (\\d[-.\\w]+) \\([\\w ]+\\) Ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w]+) FTP SERVICE ready\\r\\n500 Please enter a command\\. Dunno how to interperet empty lines\\.\\.\\.\\r\\n500 Please enter a command\\. Dunno how to interperet empty lines\\.\\.\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Windows FTP Server"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server \\(BSDI Version ([\\w.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  FTP server \\(Hummingbird Ltd\\. \\(HCLFTPD\\) Version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 OpenFTPD server ready\\. .*\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server \\(NetBSD-ftpd 20\\w+\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\r\\n    Your connection logged!\\r\\n220 ([\\w_.-]+) FTP server \\(NetBSD-ftpd 200\\d+\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 CommuniGate Pro FTP Server ([\\d.]+) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 CommuniGate Pro FTP Server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) CommuniGate Pro FTP Server (\\d[\\w._-]+) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421 Sorry you are not welcomed on this server\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-BulletProof FTP Server ready \\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:220.*\\r\\n)?220 [Ee]valine FTP server \\(Version:  Mac OS X"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 WinGate Engine FTP Gateway ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Quick 'n Easy FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Quick 'n Easy FTP Server DEMO\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421 Too many connections for this IP address, please try again later\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Tornado-vxWorks \\(VxWorks([\\d.]+)\\) FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 [-\\w_.]+ FTP server \\(UNIX\\(r\\) System V Release 4\\.0\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:220-.*\\r\\n)?220 ([-\\w_.]+) FTP Server \\(Oracle XML DB/Oracle9i Enterprise Edition Release ([\\d.]+) - Production\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:200-.*\\r\\n)?220 ([-\\w_.]+) FTP Server \\(Oracle XML DB/Oracle9i Enterprise Edition Release ([\\d.]+) - 64bit Production\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:220-.*\\r\\n)?220 ([-\\w_.]+) FTP Server \\(Oracle XML DB/Oracle9i Release ([\\d.]+) - Production\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:220-.*\\r\\n)?220 ([-\\w_.]+) FTP Server \\(Oracle XML DB/Oracle Database 10g Enterprise Edition Release ([\\d.]+) - Production\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:220-.*\\r\\n)?220 ([-\\w_.]+) FTP Server \\(Oracle XML DB/Personal Oracle9i Release ([\\d.]+) - Production\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:220-.*\\r\\n)?220 ([\\w._-]+) FTP Server \\(Oracle XML DB/Oracle Database\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:200-.*\\r\\n)?220 ([\\w._-]+) FTP Server \\(Oracle XML DB/\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) PacketShaper FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 WfFTP server\\(([\\w.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- (.*) WAR-FTPD ([-\\w.]+) Ready\\r\\n220 Please enter your user name\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Canon ([\\w._-]+) FTP Print Server V([\\w._-]+) .* ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^500 OOPS: .*\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^500 OOPS: vsftpd: both local and anonymous access disabled!\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Version ([\\d.]+) on MPS100\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*bftpd ([\\d.]+) at ([-\\w_.]+) ready\\.?\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 RICOH Pro (\\d+[a-zA-Z]{0,3}) FTP server \\(([\\d+.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 LANIER ([\\w\\d /-]+) FTP server \\(([\\d+.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Code-Crafters Ability FTP Server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Code-Crafters - Ability Server ([\\d.]+)\\."
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+)           FTP server \\(ARM_BE - V([\\w.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 MikroTik FTP server \\(MikroTik v?([\\w._-]+)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 lankacom FTP server \\(MikroTik v?([\\w._-]+)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 (.+) FTP server \\(MikroTik ([\\w._-]+)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NetPresenz v([\\d.]+) \\(Unregistered\\) awaits your command\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 LP-8900-[0-9A-F]+ FTP server \\(OEM FTPD version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 StylusPhoto750-[0-9A-F]+ FTP server \\(OEM FTPD version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AL-(\\w+)-[0-9A-F]+ FTP server \\(OEM FTPD version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Version ([\\d.]+) on MSS100\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Matrix FTP server \\(Server \\w+#\\d\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Titan FTP Server ([\\d.]+) Ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421-\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+=\\+\\r\\n421-The evaluation period for this Titan FTP Server has expired\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ioFTPD \\[www: http://www\\.ioftpd\\.com\\] - \\[version: ([-\\w_. ]+)\\] server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 CesarFTP ([\\w.]+) Server Welcome !\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 CesarFTP ([\\w.]+) \\xb7\\xfe\\xce\\xf1\\xc6\\xf7\\xbb\\xb6\\xd3\\xad !\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-This site is running the BisonWare BisonFTP server product V([\\d.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to XBOX FileZilla(?: \\(XBMC\\)|)\\r\\n220-version: XBFileZilla version ([\\d.]+), \\(based on FileZilla Server ([\\d.]+)\\)\\r\\n220 http://sourceforge\\.net/projects/xbfilezilla\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to XBOX FileZilla(?: \\(XBMC\\)|)\\r\\n220-version: XBMC:FileZilla version ([\\d.]+), \\(based on FileZilla Server ([\\d.]+)\\)\\r\\n220 http://sourceforge\\.net/projects/xbfilezilla\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Session will be terminated after 600 seconds of inactivity\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-SlimFTPd ([\\d.]+), by WhitSoft Development \\(www\\.whitsoftdev\\.com\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 BlackMoon FTP Server Version ([\\d.]+ Release \\d+) - Build \\d+\\. Free Edition\\. Service Ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 BlackMoon FTP Server Version ([\\d.]+ Release \\d+) - Build \\d+\\. Chaos Edition\\. Service Ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-BlackMoon FTP Server Version ([\\d.]+ Release \\d+) - Build \\d+\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 BlackMoon FTP Server - Free Edition - Version ([\\d.]+)\\. Service Ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 netapp ftp server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Oracle Internet File System FTP Server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NRG 2205/2238/2212 FTP server \\(([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 mandelbrot FTP server \\(Version ([\\d.]+) \\(NeXT ([\\d.]+)\\) .*\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Net Administration Divisions FTP Server Ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\r\\n220-\\r\\n220 Please enter your user name\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server \\(OSF/1 Version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Qtopia ([\\d.]+) FTP Server\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[ -]Gene6 FTP Server v([\\d.]+) +\\(Build (\\d+)\\).* ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 G6 FTP Server v([\\d.]+) \\(beta (\\d+)\\) ready \\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) by G6 FTP Server ready \\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .* by G6 FTP Server ready \\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*Hello!  I'm Gene6 FTP Server v([-\\w_.]+) \\(Build (\\d+)\\)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 sftpd/([\\d.]+) Server \\[[-\\w_.]+\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-TYPSoft FTP Server ([\\d.]+) ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Pablo's FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 PowerLogic FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 INTERMEC 540\\+/542\\+ FTP Printer Server V([\\d.]+) .* ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 EthernetBoard OkiLAN 8100e Ver ([\\d.]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 OKI-([\\w+]+) Version ([\\d.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 VxWorks \\(ENI-ftpd ([\\d.]+)\\) FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220--------------------------------------------------------------------------------\\r\\n220-This is the \\\"Banner\\\" message for the Mac OS X Server's FTP server process\\.\\r\\n.*220 ([-\\w_.]+) FTP server \\(Version:  Mac OS X Server ([\\d.]+) - \\+GSSAPI\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220--------------------------------------------------------------------------------\\r\\n220-This is the \\\"Banner\\\" message for the Mac OS X Server's FTP server process\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to U\\.S\\.Robotics SureConnect ADSL Ethernet/USB Router update FTP server v([\\d.]+)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to Xerver Free FTP Server ([\\d.]+)\\.\\r\\n220-\\r\\n220-You can login below now\\.\\r\\n220 Features: \\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server \\(tnftpd ([\\w._+-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server \\(LundFTPD ([\\d.]+) .*\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 HD316\\r FTP server\\(Version([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+)\\r FTP server\\(Version([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 (\\w+) IBM Infoprint (Color |)(\\d+) FTP Server ([\\w.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) IBM Infoprint (\\w+) FTP Server ([\\w.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ShareIt FTP Server ([\\d.]+) \\(WINCE\\) Ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ShareIt FTP Pro ([\\d.]+) \\(WINCE\\) Ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ISOS FTP Server for Upgrade Purpose \\(([\\d.]+)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 PV11 FTP Server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Alize Session Manager FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-FTP Server ready\\r\\n220-Welcome to the Sambar FTP Server\\r\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SINA FTPD \\(Version ([-\\d.]+)\\).*\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 DataHive FTP Server ([\\d.]+) Ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220--- AlterVista FTP, based on Pure-FTPd --\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the ADI Convergence Galaxy update FTP server v([\\d.]+)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421 You are not permitted to make this connection\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 copier2FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 DrayTek FTP version ([\\d.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server ready \\(mod_ftpd/([\\d.]+)\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 The Avalaunch FTP system -- enter user name\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Server 47 FTP service\\. Welcome\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-loading\\.\\.\\r\\n220-\\|           W e L c O m E @ SFXP\\|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\\|\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Z-FTP\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w_]+) Dell ([-/.+\\w ]+) FTP Server ([\\w._-]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w_]+) Dell Wireless Printer Adapter ([\\w._-]+) FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w_]+) Dell Laser Printer ([-/.+\\w ]+) FTP Server ([\\w._-]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Dell Laser Printer ([\\w._-]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Dell Color Laser ([\\w._-]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Dell ([\\w._-]+) Color Laser\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Dell MFP Laser ([\\w._-]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Plan 9 FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\+----------------------\\[ UNREGISTERED VERSION \\]-----------------------\\+\\r\\n220-\\|   This site is running unregistered copy of RaidenFTPD ftp server   \\+\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "220 ([-\\w_.]+) FTP server \\(Version:  Mac OS X Server ([\\d.]+) - \\+GSSAPI\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Fastream NETFile FTP Server(?: Ready)?\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP 9500 server \\(Version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 [\\d.]+ CVX FTP server \\(([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\.:\\.\\r\\n220-\\.:+\\r\\n220-\\.::::::::::\\. e1137 FTP Server loading \\.::::::::::::::\\. WinSock ready \\."
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Connect\\(active \\d+, max active \\d+\\) session \\d+ to RemoteScan Server ([\\d.]+) on .*\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.ArGoSoft FTP Server for Windows NT/2000/XP, Version [\\d.]+ \\(([\\d.]+)\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.ArGoSoft FTP Server, Version [\\d.]+ \\(([\\d.]+)\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ArGoSoft FTP Server \\.NET v\\.([\\d.]+) at [^\\r\\n]*\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the dvd2xbox ftp server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome To WinEggDrop Tiny FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\n220-Welcome to the HOME Edition of GlobalSCAPE CuteFTP Server, which limits\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Gestetner DSm622 FTP server \\(([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NRG (\\w+) FTP server \\(([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-<W\\x80lC0ME T0 THE \\xb0GP - FXP PubSTRO\\xb0 by JACK>\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 wzd server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^500 Sorry, no server available to handle request on ([-\\w_.:]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^500 Sorry, no server available to handle request on ([-\\w_.:]+)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Intel NetportExpress\\(tm\\) 10/100 Single-port FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NET\\+ARM FTP Server ([\\d.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- FTPshell Server Service \\(Version ([-\\w_.]+)\\)\\r\\n220  \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Connected to ([-\\w_.]+) ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP Server \\(LiteServe\\) Ready!\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 BetaFTPD ([-\\w_.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NET Disk FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421 Service not available, closing control connection\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NETWORK HDD FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Blue Coat FTP Service\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Homer Ftp Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Personal FTP Server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Personal FTP Professional Server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-InterVations FileCOPA FTP Server Version ([\\d.]+) .*\\r\\n220 Trial Version\\. (\\d+) days remaining\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 cab Mach4/(\\d+) FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 cab A4\\+/(\\d+) FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 (KM[\\w+]+) FTP server \\(KM FTPD version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Golden FTP Server ready v([\\w._-]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Golden FTP Server Pro ready v([\\w._-]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Golden FTP Server PRO ready v([\\w._-]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ITC Version  ([\\d.]+) of [-\\d]+  X Kyocera UIO UMC 10base OK \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ActiveFax Version ([\\d.]+) \\(Build (\\d+)\\) - .*\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to .*\\r\\n220 CrushFTP Server Ready[!.]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to CrushFTP([\\w._-]+)!\\r\\n220 CrushFTP Server Ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 DPO-7300 FTP Server ([\\d.]+) ready\\.\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to WinFtp Server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  IBM TCP/IP for OS/2 - FTP Server ver ([\\d:.]+) on .* ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AudioVAULT FTP server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP/VPP Server ([\\d.]+) / Current Date: [-\\d]+ [\\d:]+\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Xerox WorkCentre (\\w+) Ver ([\\d.]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Xerox Phaser (\\w+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .* Server \\(vftpd ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Network Camera FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-TwoFTPd server ready\\.\\r\\n220 Authenticate first\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  WEB TLC FTP SERVER READY TYPE HELP FOR HELP \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w_]+) Lexmark ([-/.+\\w ]+) FTP Server ([-.\\w]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-/.+\\w_]+) MarkNet ([-/.+\\w ]+) FTP Server ([-.\\w]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^500 ([\\w._-]+) FTP server shut down -- please try again later\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  \\(Ver\\. ([^)]+)\\) [A-Z][a-z]{2} \\d+ 20\\d+ ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Cisco \\(([\\d.]+)\\) FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 \\\"Global Site Selector FTP\\\"\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ISOS FTP Server \\(([\\d.]+)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- smallftpd ([\\d.]+)\\r\\n220- check http://smallftpd\\.free\\.fr"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) GridFTP Server ([\\w._-]+) \\((gcc\\w+), [-\\d]+\\) (?:\\[unknown\\] )?ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) GridFTP Server ([\\w._-]+) \\((gcc\\w+), [-\\d]+\\) \\[Globus Toolkit ([\\w._-]+)\\] ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) (?:[A-Z]+ )?GridFTP Server ([\\d.]+) (GSSAPI type Globus/GSI wu-\\S+) \\(gcc\\w+, [-\\d]+\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server \\(GridFTP Server ([\\d.]+) \\[(GSI patch v[\\d\\.]+)\\] (wu-\\S+) .+\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the OpenDreambox FTP service\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Willkomen auf Ihrer Dreambox\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the PLi dreambox FTP server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the Pli Jade Server >> OpenDreambox FTP service <<\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server \\(KONICA FTPD version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 KONICA MINOLTA FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^Error loading /etc/ssl/certs/ftpd\\.pem:"
+        },
+        {
+            "type": "perl",
+            "pattern": "^500 OOPS: cannot locate user entry:([-\\w_]+)\\r\\n500 OOPS: child died\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Freebox FTP Server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  FTP server \\(Medusa Async V([\\d.]+) \\[experimental\\]\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-  Novonyx FTP Server for NetWare, v([\\d.]+) \\("
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) \\(Aironet (BR\\w+) V([\\d.]+)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome To Rumpus!\\r\\n220 Service ready for new user\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Hello, I'm freeFTPd ([\\d.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 PrNET FTP server \\(PrNET FTP ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Looking up your hostname\\.\\.\\.\\r\\n220-Welcome to SimpleFTPd v([\\w.]+) by MagicalTux"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 IB-21E Ver ([\\d.]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 IB-23 Ver ([\\d.]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SurgeFTP ([-\\w_.]+) \\(Version ([\\w.]+)\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Disk Station FTP server at ([-\\w_.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  FTP Merak ([\\d.-]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^refused in\\.ftpd from [-\\w_.]+ logged\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Ipswitch Notification Server"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-?\\s+SSH-[\\d.]+-([a-zA-Z]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Xlight FTP Server ([\\d.]+) ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Xlight Server ([\\d.]+) ready\\.\\.\\. \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NetTerm FTP server ready \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SHARP ([\\w-]+) FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SHARP ([\\w-]+) Ver ([\\w._-]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 (FS-\\w+) FTP server\\.?\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Scala FTP \\(\\\"Scala InfoChannel Player \\d+\\\" ([\\w/.]+)\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Services for ClearPath MCP:  Server version ([\\d.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Nut/OS FTP ([\\d.]+) beta ready at"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ftpd - accept the connection from [\\d.]+\\n220-eDVR FTP Server v([\\d.]+) \\(c\\)Copyright WebGate Inc\\. \\w+-\\w+\\r\\n220-Welcome to (DS\\w+)\\r\\n220 You will be disconnected after 180 seconds of inactivity\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP-Backupspace\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-.* \\(([-\\w_.]+)\\)\\r\\n Synchronet FTP Server ([-\\w_.]+)-Win32 Ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to (DCS-\\w+) FTP Server\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 X5 FTP server \\(version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 zFTPServer v([-\\w_.]+), build ([-\\d]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to zFTPServer\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FRITZ!BoxWLAN(\\d+)(?:\\(UI\\))? FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FRITZ!BoxFonWLAN(\\w+)(?:\\(\\w+\\))? FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FRITZ!Box Fon WLAN (\\d+) FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FRITZ!Box(\\w+)Cable\\(um\\) FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 CompuMaster SRL, WT-6500 Ftp Server \\(Version ([\\d.]+)\\)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^211 Hello \\[[-\\w_.]+\\], Secure/IP Authentication Server ([-\\w_.]+) at your service\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  HP166XC V([-\\w_.]+) FUSION FTP server \\(Version ([-\\w_.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server, type 'quote help' for help\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^550 no more people, max connections is reached\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Fastream IQ FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 RICOH Aficio ([\\w ._+-]+?) FTP server \\(([-\\w_.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 RICOH Aficio ([\\w ._+-]+?) \\(([-\\w_.]+)\\) FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 HIOKI ftp service v([\\d.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Treck FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Microtest SuperCD-cdserver FTP server \\(Version V([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP service \\(Ftpd ([\\d.]+)\\) ready on ([\\w._-]+) at"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Cube Station FTP server at ([\\w._-]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Xerox Phaser (\\w+)\\r\\n421 Service not available, closing control connection\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 CrossFTP Server ready for new user\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ATAboy2X-\\d+ FTP V([\\w._-]+) ready\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Belkin Network USB Hub Ver ([\\w._-]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-TCP/IP for VSE FTP Daemon Version ([\\w._-]+) "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server: Lexmark Optra LaserPrinter ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NSE \\(AG (\\d+)   v([\\w._-]+)\\) FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Easy File Sharing FTP Server!\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- \\*+\\r\\n220- \\r\\n220-      Welcome to Dream FTP Server\\r\\n220-      Copyright 2002 - 2004\\r\\n220-      BolinTech Inc\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the Netburner FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NetBotz FTP Server ([\\w._-]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 TOSHIBA e-STUDIO5500c FTP server \\(([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  \\(WJ-HD220 FTP Server version ([\\w._-]+) Ready\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:220-.*\\r\\n)*220 ([\\w._-]+) FTP server \\(EMC-SNAS: ([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-CentOS release ([\\w._-]+) .*\\r\\n220 ProFTPD ([\\w._-]+) Server \\(ProFTPD Default Installation\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 TCAdmin FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^.* klogd: klogd started: BusyBox v([\\w._-]+) \\(.*\\)\\r\\nDoing BRCTL \\.\\.\\.\\r\\nsetfilter br0 0 \\r\\n/var/tmp/act_firewall: No such file or directory\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*BlackJumboDog Version ([^ ]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[- ] ?[Cc]rob FTP [Ss]erver [Vv]?([-.\\d\\w]+)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.* GlobalSCAPE Secure FTP Server \\(v\\. ([^\\)]+)\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 GlobalSCAPE Secure FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Mollensoft FTP Server ([^ ]+) Ready\\."
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Ocean FTP Server."
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 4dftp .* FTP Service \\(Version ([^)]+)\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 IBM NPS 540\\+/542\\+ FTP Printer Server V([\\w._-]+) "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server \\(mmftpd \\(([\\w._/-]+)\\)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 C500 FTP Server ([\\w._-]+) ready\\.\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-TiMOS-\\w+-([\\w._-]+) cpm/hops ALCATEL ESS 7450 Copyright \\(c\\) 2000-2007 Alcatel-Lucent\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SAVIN 8055 FTP server \\(([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  TANDBERG    Satellite Modulator SM6600\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SUN StorEdge 3511 RAID FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 IFT ([\\w._-]+) RAID FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421 Closing non-secure connections in Secure Mode\\. \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Sami FTP Server ([\\w._-]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 DrFTPD ([\\w._-]+) http://drftpd\\.org\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 DrFTPD\\+ ([\\w._-]+) \\(\\+STABLE\\+\\) \\$Revision: (\\d+) \\$ http://drftpd\\.org\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Conti FTP Server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Mobile File Service\\r\\n\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Topfield PVR FTP server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server \\(WS2000 FTPD Server\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  ADH FTP SERVER READY TYPE HELP FOR HELP \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 TDS400 FTP Service \\(Version ([\\w._-]+)\\)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ---freeFTPd 1\\.0---warFTPd 1\\.65---\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- \\w+\\r\\n220 FTP Server powered by: Quick 'n Easy FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-National Instruments FTP\\r\\n220 Service Ready \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-   __  _   __  __ ___ __\\r\\n220-  \\|__ \\|_\\) \\|__ \\|__  \\|   /\\r\\n220-  \\|   \\|\\\\  \\|__ \\|__  \\|  /_\\r\\n220-\\r\\n220-   The fun has just begun\\.\\.\\.\\r\\n220 \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "Permission denied\\.\\(Please check access control list\\)\\r\\nPermission denied\\.\\(Please check access control list\\)\\r\\n\\n\\rSystem administrator is connecting from [\\d.]+\\n\\rReject the connection request !!!\\n\\r\\n\\rSystem administrator is connecting from [\\d.]+\\n\\rReject the connection request !!!\\n\\r"
+        },
+        {
+            "type": "perl",
+            "pattern": "^550 Permission denied\\.\\(Too many user login!!!\\)\\r\\nPermission denied\\.\\(Please check access control list\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-FTPSERVE IBM VM Level (\\d)(\\d+) at ([\\w._-]+), [^\\r\\n]*\\r\\n220 Connection will close if idle for more than 5 minutes\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 MeritFTP ([\\d.]+) at ([\\d.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NET\\+OS ([\\d.]+) FTP server ready\\.\\r\\n503 Bad sequence of commands\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the NSLU2 vsftp daemon\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-  Menuet FTP Server v([\\d.]+)\\r\\n220 Username and Password required\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Xyratex (\\w+) RAID FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 MLT-57066 Version ([\\w.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 tandem FTP SERVER \\w+ \\(Version ([\\w.]+) TANDEM \\w+\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ZBR-(\\d+) Version ([\\d.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) pSOSystem FTP server \\(@\\(#\\)\\(#\\)pVER IA/MIPS, Version ([\\w._ -]+), Built on ([\\d/]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) pSOSystem FTP server \\(@\\(#\\)\\(#\\)pVER IA/PPC, Version ([\\w._ -]+), Built on ([\\d/]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) pSOSystem FTP server \\(Network Utilities for /68k-MRI/([\\w._-]+) - Network Utility\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Star IFBD-HE05/06 FTP Server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Baby FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w_.-]+) FTP server \\(witelcom ([\\d.]+)\\) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SwiFTP ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SwiFTP ([\\w._-]+) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 EFI FTP Print server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 infotec  IS (\\d+) FTP server \\(([\\w.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- Print Server ([\\d.]+ \\([^)]*\\))\\r\\n220  FTP server \\(Version ([^)]*)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server \\(ZyWALL (USG \\w+)\\) \\[[\\w._-]+\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Connected to IndiFTPD\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 EasyCoder FTP Server v\\.([\\d.]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ALFTP Server ready\\.  \\^-\\^\\)/~\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ftp server corona \\(([\\w._-]+)\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 vxTarget FTP server \\(VxWorks ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to the S60 Dumb FTP Server \\(dftpd\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Local time is now [\\d:]+\\r\\n220 You will be disconnected after 300 seconds of inactivity\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ET(\\w+) ([\\w-]+) Series FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 aFTPServer ready \\(cwd is /\\)\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 BCB1COOL Server \\(Proftpd FTP Server\\) \\[([\\w._-]+)\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP version ([\\w.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP version ([\\w.]+)\\r\\n331 Enter PASS command\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Core FTP Server Version ([\\w._-]+, build \\d+), installed (\\d+ days ago) Registered\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Core FTP Server Version ([\\w._-]+, build \\d+) Registered\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-.*\\r\\n220 ([\\w._-]+) FTP Server \\(Apache/([\\w._-]+) \\(Linux/SUSE\\)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 pyftpdlib ([\\w._-]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 pyftpdlib based ftpd ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 pyftpdlib (\\d[\\w._-]*) based ftpd ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Simple FTP daemon coming up!\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 DiskStation FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 DiskStation-([\\w._-]+) FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- Ftp Site Powerd by BigFoolCat Ftp Server 1\\.0 \\(meishu1981@(?:163\\.com|gmail\\.com)\\)\\r\\n220- Welcome to my ftp server\\r\\n220 \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 <\\w+>  Tenor Multipath Switch FTP server \\(Version VxWorks([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Tenor Multipath Switch\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Imagistics ZB3500080 Ver ([\\w._-]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP SERVER T9552G07 \\(Version ([\\w._-]+) TANDEM ([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 iFTP server v([\\w._-]+)\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^120 The user queue is full, please try again later\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Mabry \\(FtpServX COM Object\\) server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server \\(InterCon version ([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 [\\w._-]+Citizen_CLP([\\w._-]+) FTP server \\(InterCon version ([\\w._-]+)\\) ready\\.\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FileApp - FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 (?:SHARP|Sharp) ([\\w._-]+) Ver ([\\w._+-]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Nucleus FTP Server \\(Version ([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 -= HyNetOS FTP Server =-\\r\\n500 Command \\(null\\) not understood\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^230 User logged in\\.\\r\\n214-The following commands are recognized\\.\\r\\n214-USER\\r\\n214-PASS\\r\\n214-XPWD\\r\\n214-PWD\\r\\n214-TYPE\\r\\n214-PORT\\r\\n214-EPRT\\r\\n214-PASV\\r\\n214-EPSV\\r\\n214-ALLO\\r\\n214-STOR\\r\\n214-APPE\\r\\n214-RETR\\r\\n214-LIST\\r\\n214-NLST\\r\\n214-SYST\\r\\n214-MDTM\\r\\n214-XCWD\\r\\n214-CWD\\r\\n214-XCUP\\r\\n214-CDUP\\r\\n214-DELE\\r\\n214-XMKD\\r\\n214-MKD\\r\\n214-XRMD\\r\\n214-RMD\\r\\n214-NOOP\\r\\n214-RNFR\\r\\n214-RNTO\\r\\n214-REST\\r\\n214-SIZE\\r\\n214-QUIT\\r\\n214-HELP\\r\\n214-STAT\\r\\n214-SITE\\r\\n214-FEAT\\r\\n214-ADMIN_LOGIN\\r\\n214-MGET\\r\\n214-MPUT\\r\\n214-OPTS\\r\\n214 End of help\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\*{53}\\r\\n220-Welcome to FTP\\r\\n220-Please use your email address and password to login\\.\\r\\n220-If you are registered for more than one site then your login name must be: yourcompany\\.com/you@youremail\\.com\\.\\r\\n220-\\*{53}\\r\\n220-\\r\\n220 FTP Server Ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the ftp service\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 silex ([\\w._-]+) Ver ([\\w._-]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Tracker RIA, 12090011\\r\\n220-Local time ([\\d:]+)\\r\\n220 You will be disconnected after 180 seconds of inactivity\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Comau ([\\w._-]+) FTP server \\(Version ([\\w._-]+); Sys_id:([\\w._-]+)\\) [\\d-]+ ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 CW([\\w._-]+) FTP Service \\(Version ([\\w._-]+)\\)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 CONNECT:Enterprise Gateway ([\\w._-]+)\\. FTP Server ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Playstation 3 FTP    \\r\\n220 Copyleft \\(c\\) \\d+ multiMAN \\(login as anonymous\\)    \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) (BV[\\w._-]+) FTP server \\(V([\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) \\(Libra FTP daemon ([\\w._ -]+)\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 (KM-[\\w._-]+) FTP server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Solar FTP Server \\(http://solarftp\\.com\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Indy FTP-Server bereit\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to the Ascotel FTP server\\r\\n220 \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 \\(none\\) FTP server \\(Version ([\\w._-]+/OpenBSD/Linux-ftpd-[\\w._-]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 EthernetBoard OkiLAN ([\\w._-]+) Ver ([\\w._-]+) FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Comtrend FTP firmware update utility\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Wing FTP Server ([\\w._-]+) ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Wing FTP Server ready\\.\\.\\. \\(UNREGISTERED WING FTP SERVER\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Wing FTP Server ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\xa1\\xee Sonic FTP Server \\(Version ([\\w._-]+)\\)\\.\\r\\n220-\\xa1\\xee "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Aos FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Serveur FTP ::ffff:[\\d.]+ pr\\xc3\\xaat\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FreeFloat Ftp Server \\(Version ([\\w._-]+)\\)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FreeFlow Accxes FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 [\\d.]+ FTP Server \\(Apache/([\\w._-]+) \\(Ubuntu\\) (.*)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to This FTP Server\\. Service ready for new user\\.\\r\\n214-The following commands are recognised:\\r\\nUSER\\r\\nPASS\\r\\nCWD\\r\\nQUIT\\r\\nTYPE\\r\\nPORT\\r\\nRETR\\r\\nSTOR\\r\\nSTOU\\r\\nAPPE\\r\\nRNFR\\r\\nRNTO\\r\\nABOR\\r\\nDELE\\r\\nCDUP\\r\\nRMD\\r\\nMKD\\r\\nPWD\\r\\nLIST\\r\\nNLST\\r\\nHELP\\r\\nNOOP\\r\\nXCUP\\r\\nXCWD\\r\\nXPWD\\r\\nXRMD\\r\\nXMKD\\r\\n214 List End\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Wind River FTP server ([\\w._-]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server \\(ZyWALL (USG \\w+)\\) \\[[a-f:\\d.]+\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Authentication_Required\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Ftp firmware update utility\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^550 Permission denied ,please check access control list\\r\\nPermission denied\\.\\(Please check access control list\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 RIEDEL Artist FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 (ZXDSL [\\w._-]+) FTP version ([\\w._-]+) ready at .*\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ - error: no valid servers configured\\n - Fatal: error processing configuration file '/etc/proftpd/proftpd\\.conf'\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SoftDataCable ([\\w._-]+) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Operation successful\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\*\\*\\* Running an unlicensed copy of TurboFTP Server \\*\\*\\*\\r\\n220 TurboFTP Server ([\\w._-]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^200 Welcome to BarracudaBackupFTPd\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 awaiting Input\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the Cisco (TelePresence MCU [\\w._-]+), version ([\\w._()-]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Multicraft ([\\w._-]+) FTP server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 [\\d.]+ BECO FTP server \\(Version ([\\w._-]+)\\) ready\\.\\r?\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-TiMOS-B-([\\w._-]+) both/hops ALCATEL SR ([\\w._-]+) Copyright \\(c\\) \\d+-\\d+ Alcatel-Lucent\\.\\r\\n220-All rights reserved\\. All use subject to applicable license agreements\\.\\r\\n220-Built on (.*) by builder in /rel[\\w._-]+/[\\w._-]+/[\\w._-]+/panos/main\\r\\n220-\\r\\n220-This is a Maxcom, system restricted to authorized individuals\\. This system is subject to monitoring\\. Unauthorized users, access, and/or modification will be prosecuted\\.\\r\\n220 FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ASTRA-Super FTP server ready\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ucftpd FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Stupid-FTPd server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP v([\\d.]+) at ([\\w.-]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FRITZ!Box(\\w+)\\(kdg\\) FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to cc-ftpd\\.\\r\\n220-You are user number (\\d+ of \\d+) allowed\\.\\r\\n220-Local time is now ([\\d:]+)\\. Server port: \\d+\\.\\r\\n220-This is a private system - No anonymous login\\r\\n220-IPv6 connections are also welcome on this server\\.\\r\\n220 You will be disconnected after 15 minutes of inactivity\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w.-]+) FTP server \\(QNXNTO-ftpd (\\d{8})\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Cerberus FTP Server - Home Edition\\r\\n220-This is the UNLICENSED Home Edition and may be used for home, personal use only\\r\\n220-Welcome to Cerberus FTP Server\\r\\n220 Created by Cerberus, LLC\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-220-Welcome to Cerberus FTP Server\\r\\n220 220 Created by Cerberus, LLC\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to Cerberus FTP Server\\r\\n220 Created by Cerberus, LLC\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Welcome to my Server\\r\\n220-\\r\\n220 ICS FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ADAM2 FTP Server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Idea FTP Server v([\\d.]+) \\(([\\w.-]+)\\) \\[[\\d.]+\\]\\r\\n220 Ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w.-]+)  Lexmark ([\\w]+) FTP Server ([\\w.-]+) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Utility FTP server \\(Version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 PocketPro (\\w+) FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Version ([\\d.]+) on (IQ\\w+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FRITZ!Box(\\d+\\w*(?:\\(UI\\))?) FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 220 RMNetwork FTP\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Monarch (\\d+) Print Adapter FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-TCP/IP for VSE Internal FTPDAEMN ([\\d.]+ ?[A-Z]) (\\d{8}) \\d\\d\\.\\d\\d\\r\\n    Copyright \\(c\\) 1995,2006 Connectivity Systems Incorporated\\r\\n220 Ready for new user\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- \\r\\n {14}_/_/_/_/  \\*\\*\\* eXo Platform JCR FTP Server {8}_/_/_/_/\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220  RT-IP FTP Server ready\\. Type HELP for help\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to ([\\w.-]+)'s Everything ETP Server version ([\\d.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to HD Media Box !\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^550 There is no place for you to log in\\. Create domain for IP [\\d.]+\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SAVIN (\\w+) FTP server \\(([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w.-]+) FTP server \\(StarOS\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-  FTP Server \\(RTOS-UH\\) ready\\. \\(c\\)IEP  Version: ([\\d.]+)\\r\\n220 Connection is automatically closed if idle for 10 Minutes\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 iosFtp server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SP (C?\\d+\\w*) \\([a-f0-9]+\\) FTP server ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Sharp - NetScan Tool\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to ALPHA -FTPd server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 IPCamera FtpServer\\(www\\.maygion\\.com\\),do NOT change firmware unless you know what you are doing!\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 AXIS ([\\w._-]+) Video Encoder ([\\w._-]+) \\(\\d\\d\\d\\d\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Star (IFBD-HE[\\d/]+) FTP Server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the HomeWorks Processor\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220- \\*{29}\\r\\n {5}\\*\\* {8}Welcome on {7}\\*\\*\\r\\n {5}\\* {5}Gabriel's FTP Server  \\*\\r\\n {5}\\*\\* {6}([\\w./_-]+) Release    \\*\\*\\r\\n220  \\*{29}\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Debian GNU/Linux (\\d+)\\r\\n220 ProFTPD ([\\w._-]+) Server "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Praim Srl, ([\\w._-]+) Ftp Server \\(Version ([\\w._-]+) \\[[\\w :]+\\]\\)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Harris BCD FTP Ready\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 welcome your using  ftp server\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 DSC ftpd 1\\.0 FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FANUC FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 VicFTPS ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Wellcome to Home Ftp Server!\\r\\n220 FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 TASKalfa (\\w+) FTP server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 o2 MediaCenter FTP Server v([\\w._-]+) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 MinWin FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcomd to iCatch FTP Server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 PCMan's FTP Server ([\\w._-]+) Ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server \\((NXC\\d+)\\) \\[[a-f:\\d.]+\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 IFT DS ([\\w-]+) RAID FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Synology FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-owftpd 1-wire ftp server -- Paul H Alfille\\r\\n220-Version: (\\d[\\w._-]*) see http://www\\.owfs\\.org\\r\\n220 Service ready for new user\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Firewall Authentication required before proceeding with service\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421 Your IP is banned, no further requests will be processed from this IP \\([\\d.]+\\)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 RICOH ([A-Z 0-9]+) FTP server \\(([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Femitter FTP Server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421-Could not open file /var/run/bftpdutmp\\r\\n421 Server disabled for security reasons\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Gameservers FTPD v([\\d.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 DSL Router FTP Server v([\\d.]+) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 NRG MP (\\d+) FTP server \\(([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 StingRay FTP Server (\\d[\\w._-]+) ready to accept your commands\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Inspired Signage : ISPlayerFTPService-Default ready on Port : \\d+\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Speedport W (\\w+) FTP Server v([\\d.]+) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421 Too many users logged in, closing control 421 Service not available, remote server has closed connection\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the Eltek Power System FTP server\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FUJI XEROX DocuPrint ([A-Z][A-Z\\d]+(?: ?[a-zA-Z]{1,2})?)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^421 Service not available \\(server too busy\\)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ECOSYS (P\\d\\w+) FTP server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTPVita Server ready\\.\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server \\((UAG\\d+)\\) \\[[a-f:\\d.]+\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Software Data Cable (\\d[\\w._-]*) ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^200 Groupcall Xporter - ([\\d.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 In-Sight \\(R\\) ([\\w._-]+) Release ([\\d.]+) \\(\\d+\\) ready \\(([\\w._-]+)\\)\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP ready at [JFMASOND][aepueco][nbrylgptvc] \\d\\d? \\d\\d:\\d\\d:\\d\\d\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 iQ-R FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 [\\d.]{7,15} (CJ\\w+)-EIP\\d+ FTP server \\(FTP Version ([\\d.]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 CMFP\\(v(\\w+-V\\w+)- 1a\\) FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server \\(U(?:LTRIX|ltrix) Version ([\\d.]+) ([^)]+)\\) ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-={61}\\r\\n220-Welcome\\.\\r\\n220-\\r\\n220-This is a running (RSX-[\\w-]+) system\\.\\r\\n220-={61}\\r\\n220 Welcome\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Keil FTP service\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 QnUDVCPU FTP server ready\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 (FS-\\d+MFP\\+?) FTP server\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server \\(([NWAP]{3}\\d+[\\w-]*)\\) \\[[a-f:\\d.]+\\]\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server 2\\.1 ready\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server ready\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 OpenFTPD server([^ ]+)?"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to ([-.\\w]+) FTP.*\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) [-.\\w ]+ftp.*\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-([-.\\w]+) [-.\\w ]+ftp.*\\r\\n220"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 [-.\\w ]+ftp.*\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-[-.\\w ]+ftp.*\\r\\n220"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[- ].*ftp server.*\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\r?\\n220 - ftp"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to Stupid-FTPd server\\.\\r\\n422 Too busy to play with you\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Service ready\\.\\r\\n501 Syntax Error\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to TBS FTP Server\\.\\r\\n(?:202 Command not implemented, superfluous at this site\\.\\r\\n){2}"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Service ready for new user\\r\\n500 '\\r\\n\\r\\n':command not understood\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Hello!\\r\\n502 Invalid command \"\"\\r\\n502 Invalid command \"\"\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Inactivity timer = \\d+ seconds\\. Use 'site idle <secs>' to change\\.\\r\\n221 Goodbye \\(badly formated command seen\\)\\.  You uploaded 0 and downloaded 0 kbytes\\.\\r\\n221 Goodbye \\(badly formated command seen\\)\\.  You uploaded 0 and downloaded 0 kbytes\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 \\r\\n500 Unknown command: \\\"\\\"\\r\\n500 Unknown command: \\\"\\\"\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Service ready\\r\\n500 Unsupported command\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n530 access denied\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n501 Command not supported\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server ready\\.\\r\\n530 Please login with USER and PASS\\.\\r\\n530 Please login with USER and PASS\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP Server ready \\.\\.\\.\\r\\n530 \\r  : User not logged in\\. Please login with USER and PASS first\\.\\r\\n530 \\r  : User not logged in\\. Please login with USER and PASS first\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ftp\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n200 NOOP command successful\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 \\\"Welcome to Bot FTP service\\.\\\"\\r\\n331 Please specify the password\\.\\r\\n230 Login successful\\. Have fun\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 OK\\n226 OK\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTPd ([\\d.]+)\\r\\n500 Bad command\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Telindus FTP server ready\\.\\r\\n502 Command not implemented\\.\\r\\n502 Command not implemented\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Server ready\\r\\n500 '\\r': command not understood\\.\\r\\n500 '\\r': command not understood\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 muddleftpd \\(([\\d.]+)\\) server ready\\. Enter Username\\.\\r\\n500 Only one command at a time\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n500 Only one command at a time\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 OK\\r\\n500 Syntax error, command unrecognized\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server ready\\.\\r\\n502 '': command not understood\\.\\r\\n502 '': command not understood\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server ready\\.\\r\\n500 '': command not understood\\.\\r\\n500 '': command not understood\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n500 \\?\\r\\n500 \\?\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ICS FTP Server ready\\r\\n500 '\\r': command not understood\\.\\r\\n500 '\\r': command not understood\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to pyftpd\\. Happy downloading\\.\\r\\n500 I'm gonna ignore this command\\.\\.\\. maybe later\\.\\.\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Ready\\r\\n502 Not implemented\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n530 Please login with USER and PASS\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) server ready\\.\\r\\n502 command  not implemented\\.\\r\\n502 command  not implemented\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Ftp firmware update utility\\r\\n500 Unknown command: \\\"\\\"\\r\\n500 Unknown command: \\\"\\\"\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Adtec .* FTP server, ready \\r\\n530 Login failed, check Username/Password\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server Ready\\r\\n530 Authentication required\\.\\r\\n530 Authentication required\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^230 FTP Server Ready\\r\\n530 Authentication required\\.\\r\\n530 Authentication required\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n530 USER and PASS required\\r\\n530 USER and PASS required\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n510 command not supported\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ftp server ready\\.\\r\\n500 Unknown command: \\\"\\\"\\r\\n500 Unknown command: \\\"\\\"\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Connection established\\.\\r\\n502  command not recognized\\.\\r\\n502  command not recognized\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^550 Access is denied\\.\\r\\n550 Access is denied\\.\\r\\n220 ProFTPD ([\\w._-]+) Server \\(([\\w._-]+)\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 UnleashX FTP ready\\.\\r\\n503 Login with USER first\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 BBPS3FTP ready\\r\\n500 command not recognized\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 IronPort WSA ready\\.\\r\\n500 Syntax error, command unrecognized\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 \\r\\n500-'\\r\\n500  ': command not understood\\.\\r\\n500-'\\r\\n500  ': command not understood\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ps2ftpd ready\\.\\r\\n500 Not understood\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Authenticate for FTP Access\\. \\r\\n220 \\r\\n500-Syntax error -- unknown command\\r\\n500 \\r\\n500-Syntax error -- unknown command\\r\\n500 \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ZBR-79071 Version V([\\w._-]+) ready\\.\\r\\n500 Syntax error, command unrecognized or malformed\\r\\n500 Syntax error, command unrecognized or malformed\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 \\r\\n502 No command sent\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 File Manager ready \\r\\n550 Unsupported command\\r\\n550 Unsupported command\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n530 Please login with USER and PASS\\.\\r\\n530 Please login with USER and PASS\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server[^[]* \\[([\\w.-]+)\\]\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n USER    PASS    ACCT\\*   CWD     XCWD    CDUP    XCUP    SMNT\\*   \\r\\n QUIT    REIN\\*   PORT    PASV    TYPE    STRU\\*   MODE\\*   RETR    \\r\\n STOR    STOU\\*   APPE    ALLO\\*   REST    RNFR    RNTO    ABOR    \\r\\n DELE    MDTM    RMD     XRMD    MKD     XMKD    PWD     XPWD    \\r\\n SIZE    LIST    NLST    SITE    SYST    STAT    HELP    NOOP    \\r\\n214 Direct comments to "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server ready\\.\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n USER    PASS    ACCT\\*   CWD     XCWD    CDUP    XCUP    SMNT\\*   \\r\\n QUIT    REIN\\*   PORT    PASV    TYPE    STRU    MODE    RETR    \\r\\n STOR    STOU\\*   APPE    ALLO\\*   REST    RNFR    RNTO    ABOR    \\r\\n DELE    MDTM    RMD     XRMD    MKD     XMKD    PWD     XPWD    \\r\\n SIZE    LIST    "
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP-Server on \\[([-\\w_.]+)\\]\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n214-USER    PASS    ACCT\\*   CWD     XCWD    CDUP    XCUP    SMNT\\*   \\r\\n214-QUIT    REIN\\*   PORT    PASV    TYPE    STRU    MODE    RETR    \\r\\n214-STOR    STOU\\*   APPE    ALLO\\*   REST    RNFR    RNTO    ABOR    \\r\\n214-DELE    MDTM    RMD     XRMD    MKD     XMKD    PWD     XPWD    \\r\\n214-SIZE    LIST"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server ready\\.\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n214-USER    PASS    ACCT\\*   CWD     XCWD    CDUP    XCUP    SMNT\\*   \\r\\n214-QUIT    REIN\\*   PORT    PASV    EPRT    EPSV    TYPE    STRU    \\r\\n214-MODE    RETR    STOR    STOU    APPE    ALLO\\*   REST    RNFR    \\r\\n214-RNTO    ABOR    DELE    MDTM    RMD     XRMD    MKD     XMKD"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+ )?FTP [sS]erver ready\\.?\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n214-USER    PASS    ACCT\\*   CWD     XCWD    CDUP    XCUP    SMNT\\*   \\r\\n214-QUIT    REIN\\*   PORT    PASV    EPRT    EPSV    TYPE    STRU    \\r\\n214-MODE    RETR    STOR    STOU    APPE    ALLO\\*   REST    RNFR    \\r\\n214-RNTO    ABOR    DELE    MDTM    RMD     XRMD    MKD     XMKD"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n(?:214-| )USER    PASS    ACCT\\*   CWD     XCWD    CDUP    XCUP    SMNT\\*   \\r\\n(?:214-| )QUIT    REIN\\*   PORT    PASV    TYPE    STRU    MODE    RETR    \\r\\n(?:214-| )STOR    STOU    APPE    ALLO\\*   REST    RNFR    RNTO    ABOR    \\r\\n(?:214-| )DELE    MDTM    RMD     XRMD    MKD     XMKD    PWD     XPWD    \\r\\n(?:214-| )SIZE"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n(?:214-| )USER    PASS    ACCT\\*   CWD     XCWD    CDUP    XCUP    SMNT\\*   \\r\\n(?:214-| )QUIT    REIN\\*   PORT    PASV    EPRT    EPSV    TYPE    STRU    \\r\\n(?:214-| )MODE    RETR    STOR    STOU    APPE    ALLO\\*   REST    RNFR    \\r\\n(?:214-| )RNTO    ABOR    DELE    MDTM    RMD     XRMD    MKD     XMKD    \\r\\n(?:214-| )PWD     XPWD    SIZE    LIST    NLST    SITE    SYST    STAT    \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "220 localhost FTP server ready\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n214-USER    PASS    ACCT\\*   CWD     XCWD    CDUP    XCUP    SMNT\\*   \\r\\n214-QUIT    REIN\\*   PORT    PASV    TYPE    STRU    MODE    RETR    \\r\\n214-STOR    STOU    APPE    ALLO\\*   REST    RNFR    RNTO    ABOR    \\r\\n214-DELE"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\):\\r\\n CWD     XCWD    CDUP    XCUP    SMNT\\*   QUIT    PORT    PASV    \\r\\n EPRT    EPSV    ALLO\\*   RNFR    RNTO    DELE    MDTM    RMD     \\r\\n XRMD    MKD     XMKD    PWD     XPWD    SIZE    SYST    HELP    \\r\\n NOOP    FEAT    OPTS    AUTH\\*?   CCC\\*    CONF\\*   ENC\\*    MIC\\*    \\r\\n PBSZ\\*?   PROT\\*?   TYPE    STRU    MODE    RETR    STOR    STOU    \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\):\\r\\n CWD     XCWD    CDUP    XCUP    SMNT\\*   QUIT    PORT    PASV    \\r\\n EPRT    EPSV    ALLO\\*   RNFR    RNTO    DELE    MDTM    RMD     \\r\\n XRMD    MKD     XMKD    PWD     XPWD    SIZE    SYST    HELP    \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[ -].*\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\):\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n214-\\xd1\\xeb\\xe5\\xe4\\xf3\\xfe\\xf9\\xe8\\xe5 \\xea\\xee\\xec\\xe0\\xed\\xe4\\xfb \\xe1\\xfb\\xeb\\xe8 \\xf0\\xe0\\xf1\\xef\\xee\\xe7\\xed\\xe0\\xed\\xfb \\(\\* => \\xed\\xe5 \\xf0\\xe5\\xe0\\xeb\\xe8\\xe7\\xee\\xe2\\xe0\\xed\\xee\\):\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.+\\w]+) FTP server \\(.*\\) ready\\.\\r\\n214-The following commands are recognized:\\r\\n   USER    EPRT    STRU    MAIL\\*   ALLO    CWD     STAT\\*   XRMD \\r\\n   PASS    LPRT    MODE    MSND\\*   REST\\*   XCWD    HELP    PWD \\r\\n   ACCT\\*   EPSV    RETR    MSOM\\*   RNFR    LIST    NOOP    XPWD \\r\\n   REIN\\*   LPSV    STOR    MSAM\\*   RNTO    NLST    MKD     CDUP \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n214- The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    PORT    STOR    MSAM\\*   RNTO\\*   NLST\\*   MKD\\*    CDUP\\*   EPLF\\*\\r\\n   PASS    PASV\\*   APPE\\*   MRSQ\\*   ABOR    SITE\\*   XMKD\\*   XCUP\\*\\r\\n   ACCT\\*   TYPE    MLFL\\*   MRCP\\*   DELE    SYST    RMD\\*    STOU \\r\\n   SMNT\\*   STRU    MAIL\\*   ALLO\\*   CWD\\*    STAT    XRMD\\*   SIZE\\*\\r\\n   REIN\\*   MODE    MSND\\*   REST\\*   XC"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n214- The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    PORT    MODE    MSND\\*   REST\\*   XCWD\\*   HELP    PWD     MDTM\\*\\r\\n   PASS    EPRT    RETR\\*   MSOM\\*   RNFR\\*   LIST\\*   NOOP    XPWD    MACB\\*\\r\\n   ACCT\\*   PASV\\*   STOR    MSAM\\*   RNTO\\*   NLST\\*   MKD\\*    CDUP\\*   EPLF\\*\\r\\n   SMNT\\*   EPSV    APPE\\*   MRSQ\\*   ABOR    SITE\\*   XMKD\\*   XCUP\\*\\r\\n   REIN\\*   TYPE    MLFL\\*   MRCP\\*   DELE    SYST    RMD\\*    STOU \\r\\n   QUIT    STRU    MAIL\\*   ALLO\\*   CWD\\*    STAT    XRMD\\*   SIZE\\*\\r\\n214 Direct comments to http://www\\.xerox\\.com/officeprinting\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server ready\\.\\r\\n214- The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    PORT    TYPE    MLFL\\*   MRCP\\*   DELE    SYST    RMD     STOU \\r\\n   PASS    LPRT    STRU    MAIL\\*   ALLO    CWD     STAT    XRMD    SIZE \\r\\n   ACCT\\*   EPRT    MODE    MSND\\*   REST    XCWD    HELP    PWD     MDTM \\r\\n   SMNT\\*   PASV    RETR    MSOM\\*   RNFR    LIST    NOOP    XPWD \\r"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n214- The following commands are recognized \\(\\* => unimplemented\\)\\.\\r\\n   USER    PORT    RETR    ALLO    DELE    SITE    XMKD    CDUP    FEAT\\r\\n   PASS    PASV    STOR    REST    CWD     STAT    RMD     XCUP    OPTS\\r\\n   ACCT    TYPE    APPE    RNFR    XCWD    HELP    XRMD    STOU    AUTH\\r\\n   REIN    STRU    SMNT    RNTO    LIST    NOOP    PWD     SIZE    PBSZ\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n530 Please login with USER and PASS first\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-.\\w]+) FTP server ready\\.\\r\\n214- The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    PORT    STOR    MSAM\\*   RNTO    NLST    MKD     CDUP \\r\\n   PASS    PASV    APPE    MRSQ\\*   ABOR    SITE    XMKD    XCUP \\r\\n   ACCT\\*   TYPE    MLFL\\*   MRCP\\*   DELE    SYST    RMD     STOU \\r\\n   SMNT\\*   STRU    MAIL\\*   ALLO    CWD     STAT    XRMD    SIZE \\r\\n   REIN\\*   MODE    MSND\\*   REST    XCWD    HELP    PWD     MDTM \\r\\n   QUIT    RETR    MSOM\\*   RNFR    LIST    NOOP    XPWD \\r\\n214 Direct comments to "
+        },
+        {
+            "type": "perl",
+            "pattern": "^421 Server is temporarily unavailable - please try again later\\.\\r\\n421 Service closing control connection\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n214- The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    PORT    TYPE    MLFL\\*   MRCP\\*   DELE    SYST    RMD     STOU \\r\\n   PASS    LPRT    STRU    MAIL\\*   ALLO    CWD     STAT    XRMD    SIZE \\r\\n   ACCT\\*   EPRT    MODE    MSND\\*   REST    XCWD    HELP    PWD     MDTM \\r\\n   SMNT\\*   PASV    RETR    MSOM\\*   RNFR    LIST    NOOP    XPWD \\r\\n   REIN\\*   LPSV    STOR    MSAM\\*   RNTO    NLST    MKD     CDUP \\r\\n   QUIT    EPSV    APPE    MRSQ\\*   ABOR    SITE    XMKD    XCUP \\r\\n214 End\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n214-CesarFTP server ([\\w.]+) supports the following commands:\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Private ftp server, anonymous login not allowed\\.\\r\\n214-The following commands are recognized:\\r\\n   USER   PASS   QUIT   CWD    PWD    PORT   PASV   TYPE\\r\\n   LIST   REST   CDUP   RETR   STOR   SIZE   DELE   RMD \\r\\n   MKD    RNFR   RNTO   ABOR   SYST   NOOP   APPE   NLST\\r\\n   MDTM   XPWD   XCUP   XMKD   XRMD   NOP    EPSV   EPRT\\r\\n   AUTH   ADAT   PBSZ   PROT   FEAT   MODE   OPTS   HELP\\r\\n214 Have a nice day\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*\\r\\n214-The following commands are recognized:\\r\\n   USER   PASS   QUIT   CWD    PWD    PORT   PASV   TYPE\\r\\n   LIST   REST   CDUP   RETR   STOR   SIZE   DELE   RMD \\r\\n   MKD    RNFR   RNTO   ABOR   SYST   NOOP   APPE   NLST\\r\\n   MDTM   XPWD   XCUP   XMKD   XRMD   NOP    EPSV   EPRT\\r\\n   AUTH   ADAT   PBSZ   PROT   FEAT   MODE   OPTS   HELP\\r\\n   ALLO   MLST   MLSD\\r\\n214 Have a nice day\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP Server \\(Version ([\\d.]+)\\) Ready\\.\\r\\n214-The following commands are recognized:\\r\\n   USER    TYPE    RETR    RNFR    NLST    PWD     ALLO    EPSV \\r\\n   PASS    STRU    STOR    RNTO    CWD     CDUP    SYST    QUIT \\r\\n   SITE    PORT    STOU    DELE    MKD     NOOP    STAT    HELP \\r\\n   MODE    EPRT    APPE    LIST    RMD     ABOR    PASV \\r\\n214 End of Help\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 SMTP service ready\\r\\n214-Commands:\\r\\r\\n214-\\tDATA\\tRCPT\\tMAIL\\tQUIT\\tRSET\\r\\r\\n214 \\tHELO\\tVRFY\\tEXPN\\tHELP\\tNOOP\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Speak friend, and enter\\r\\n214-\\r\\n  ftpd\\.bin - Round-robin File Transfer Server, version ([\\w.]+)\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.  \\r\\n214-Ethernet Interface\\r\\n    \\r\\n    To access help, cd to the help directory then enter a \\\"dir\\\" command\\.\\r\\n    \\r\\n    \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTPU ready\\.\\r\\n500 Sorry, no such command\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+) FTP server \\(UNIX_SV ([\\d.]+)\\) ready\\.\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    PORT    STOR    MSAM\\*   RNTO    NLST    MKD     CDUP \\r\\n   PASS    PASV    APPE    MRSQ\\*   ABOR    SITE    XMKD    XCUP \\r\\n   ACCT\\*   TYPE    MLFL\\*   MRCP\\*   DELE    SYST    RMD     STOU \\r\\n   SMNT\\*   STRU    MAIL\\*   ALLO    CWD     STAT    XRMD    SIZE \\r\\n   REIN\\*   MODE    MSND\\*   REST    XCWD    HELP    PWD     MDTM \\r\\n   QUIT    RETR    MSOM\\*   RNFR    LIST    NOOP    XPWD \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 server ready\\r\\n530 Please login with USER and PASS\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n502 Command not implemented\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Type 'site help' or 'quote site help'\\.\\r\\n220-"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-\\r\\n220 Features p a \\.\\r\\n214 Please refer to FTP documentation\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server at \\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3} ready\\.\\r\\n503 USER expected\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[ -].*\\r\\n214-The following commands are recognized:\\r\\n.*\\r\\n214 Have a nice day\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([-\\w_.]+)\\r\\n214-The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n.*\\r\\n214 Direct comments to"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Please enter your login name now\\.\\r\\n502 help is not implemented\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[ -].*\\r\\n550 SSL/TLS required on the control channel\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\r\\n214-The following commands are recognized:\\r\\nHELP\\tUSER\\tPASS\\tQUIT\\tLIST\\tNLST\\r\\nRETR\\tSTOR\\tCWD\\tTYPE\\tPORT\\tPWD\\r\\nSTRU\\tMODE\\tALLO\\tACCT\\tPASV\\tNOOP\\r\\nDELE\\tEPRT\\tEPSV\\r\\n214 End of command list\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*This site is running NcFTPd Server software"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Connection established\\.\\r\\n214-The following commands are supported:\\r\\n\\tUSER\\tPORT\\tTYPE\\tABOR\\tCWD \\tLIST\\r\\n\\tPASS\\tPASV\\tSTRU\\tPWD \\tXCWD\\tNLST\\r\\n\\tQUIT\\tSTOR\\tRETR\\tMODE\\tXPWD\\tNOOP\\r\\n\\tHELP\\r\\n214 \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) (?:Ver )([\\w._-]+) FTP server\\.\\r\\n214- FTPD supported commands\\(RFC959 subset\\):\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ADP LaserStatio FTP server\\.\\r\\n214- FTPD supported commands\\(RFC959 subset\\):\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._ -]+) FTP server\\.\\r\\n214- FTPD supported commands\\(RFC959 subset\\):\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.Welcome to ([-\\w_.]+)\\r\\n214-The following SITE commands are recognized\\r\\n.*214 Pure-FTPd - http://pureftpd\\.org/?\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^214-The following SITE commands are recognized\\r\\n.*214 Pure-FTPd - http://pureftpd\\.org/\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220.*214 Pure-FTPd - http://pureftpd\\.org/?\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to the update FTP server v1\\.0\\.\\r\\n502 'HELP' command not implemented\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Connection established\\.\\r\\n214-The following commands are supported:\\r\\n\\tUSER\\tPORT\\tTYPE\\tABOR\\tCWD \\tLIST\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Ftp firmware update utility\\r\\n500 Unknown command: \\\"HELP\\\"\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server Ready\\r\\n.*\\r\\n214 Direct comments to psp@amoks\\.com\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\r\\n211 HELP text\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP Server Ready\\r\\n500 Unknown cmd HELP\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^214-The following commands are recognized \\(\\* => unimplemented\\.\\)\\r\\n.*\\r\\n214 Direct comments to support@arcanesoft\\.com\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Connection established\\.\\r\\n214-The following commands are supported\\.\\r\\n    USER    PORT    TYPE    ABOR    CWD     LIST\\r\\n    PASS    PASV    STRU    PWD     XCWD    NLST\\r\\n    QUIT    STOR    MODE    XPWD    NOOP    HELP\\r\\n214 End of HELP\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^200 1500\\r\\nf\\0\\x18\\0\\0\\0x\\xda\\x0b\\xcd\\xcb\\xce\\xcb/\\xcfSH\\xce\\xcf\\xcdM\\xccK\\xd1\\x03\\x005\\x93\\x06\\x1e"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Welcome to connection\\.\\r\\n214 FTP Server Help\\.\\r\\n  HUMAX PVR FTP Server\\. \\r\\n214 End\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Service ready for new user\\r\\n214-The following commands are recognized\\r\\n   ABOR\\r\\n   ALLO\\r\\n   APPE\\r\\n   CDUP\\r\\n   CWD\\r\\n   DELE\\r\\n   LIST\\r\\n   MKD\\r\\n   MODE\\r\\n   NLST\\r\\n   NOOP\\r\\n   PASS\\r\\n   PORT\\r\\n   PWD\\r\\n   QUIT\\r\\n   RETR\\r\\n   RMD\\r\\n   RNFR\\r\\n   RNTO\\r\\n   SIZE\\r\\n   SMNT\\r\\n   STOR\\r\\n   STRU\\r\\n   SYST\\r\\n   TYPE\\r\\n   USER\\r\\n   XCUP\\r\\n   XCWD\\r\\n   XMKD\\r\\n   XPWD\\r\\n   XRMD\\r\\n214 HELP command successful\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server ready\\.\\r\\n214-\\r\\n    The following commands are recognized\\.\\r\\n    \\(`-' = not implemented, `\\+' = supports options\\)\\r\\n    USER    REIN-   TYPE    ALLO    MKD     HELP    MIC     MLST\\+   MSND-\\r\\n    PASS    PORT    STRU    REST    PWD     NOOP\\+   CONF    MLSD    MSOM-\\r\\n    ACCT-   LPRT    MODE    RNFR    LIST    AUTH    ENC     MAIL-   XCUP\\r\\n    CWD     EPRT    RETR    RNTO    NLST    ADAT    FEAT    MLFL-   XCWD\\r\\n    CDUP    PASV    STOR    ABOR    SITE    PROT    OPTS    MRCP-   XMKD\\r\\n    SMNT-   LPSV    STOU    DELE    SYST    PBSZ    MDTM    MRSQ-   XPWD\\r\\n    QUIT    EPSV    APPE    RMD     STAT    CCC     SIZE    MSAM-   XRMD\\r\\n214 Direct comments to ftp-bugs@"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server ready\\.\\r\\n214- The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    LPRT    MODE    MSOM\\*   RNTO    SITE    RMD     SIZE    PROT \\r\\n   PASS    EPRT    RETR    MSAM\\*   ABOR    SYST    XRMD    MDTM \\r\\n   ACCT\\*   PASV    STOR    MRSQ\\*   DELE    STAT    PWD     MFMT \\r\\n   SMNT\\*   LPSV    APPE    MRCP\\*   CWD     HELP    XPWD    FEAT \\r\\n   REIN\\*   EPSV    MLFL\\*   ALLO    XCWD    NOOP    CDUP    OPTS \\r\\n   QUIT    TYPE    MAIL\\*   REST    LIST    MKD     XCUP    AUTH \\r\\n   PORT    STRU    MSND\\*   RNFR    NLST    XMKD    STOU    PBSZ \\r\\n214 Direct comments to ftp-bugs@"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ([\\w._-]+) FTP server ready\\.\\r\\n214- The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    LPRT    MODE    MSOM\\*   RNTO    SITE    RMD     SIZE    AUTH \\r\\n   PASS    EPRT    RETR    MSAM\\*   ABOR    SYST    XRMD    MDTM    PBSZ \\r\\n   ACCT\\*   PASV    STOR    MRSQ\\*   DELE    STAT    PWD     MFMT    PROT \\r\\n   SMNT\\*   LPSV    APPE    MRCP\\*   CWD     HELP    XPWD    MLSD \\r\\n   REIN\\*   EPSV    MLFL\\*   ALLO    XCWD    NOOP    CDUP    MLST \\r\\n   QUIT    TYPE    MAIL\\*   REST    LIST    MKD     XCUP    FEAT \\r\\n   PORT    STRU    MSND\\*   RNFR    NLST    XMKD    STOU    OPTS \\r\\n214 Direct comments to ftp-bugs@"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Hi there!\\r\\n214-This is gatling \\(www\\.fefe\\.de/gatling/\\); No help available\\.\\r\\n214 See http://cr\\.yp\\.to/ftp\\.html for FTP help\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Service ready for new user\\r\\n214-The following commands are implemented\\.\\r\\nABOR  APPE  CDUP  CWD   DELE  HELP  LIST  MDTM\\r\\nMKD   MODE  NLST  NOOP  PASS  PASV  PORT  PWD\\r\\nQUIT  REST  RETR  RMD   RNFR  RNTO  SITE  SIZE\\r\\nSTAT  STOR  STOU  STRU  SYST  TYPE  USER\\r\\n214 End of help\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Operation successful\\r\\n214-Features:\\r\\n EPSV\\r\\n PASV\\r\\n REST STREAM\\r\\n MDTM\\r\\n SIZE\\r\\n214 Ok\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220-Rival Group FTP Server\\r\\n220-Unauthorized access prohibited\\r\\n220 All activity is logged\\.\\r\\n214-CesarFTP server ([\\w._-]+) supports the following commands:\\r\\n214-ABOR ACCT ALLO APPE CDUP CWD  DELE HELP LIST\\r\\n214-MDTM MKD  MODE NLST NOOP PASS PASV PORT PWD \\r\\n214-QUIT REIN REST RETR RMD  RNFR RNTO SITE SMNT\\r\\n214-STAT STOR STOU STRU SYST TYPE\\r\\n214-\\r\\n214-CesarFTP server [\\w._-]+ supports specific commands\\r\\n214-invoked with the SITE command:\\r\\n214-\\r\\n214-SITE MSG\\r\\n214-\\r\\n214 \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 pyftpdlib ([\\w._-]+) ready\\.\\r\\n214-The following commands are recognized:\\r\\n ABOR   ALLO   APPE   CDUP   CWD    DELE   EPRT   EPSV  \\r\\n FEAT   HELP   LIST   MDTM   MKD    MLSD   MLST   MODE  \\r\\n NLST   NOOP   OPTS   PASS   PASV   PORT   PWD    QUIT  \\r\\n REIN   REST   RETR   RMD    RNFR   RNTO   SIZE   STAT  \\r\\n STOR   STOU   STRU   SYST   TYPE   USER   XCUP   XCWD  \\r\\n XMKD   XPWD   XRMD  \\r\\n214 Help command successful\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Service ready\\r\\n500 Unsupported command\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\r\\n214-The following commands are recognized:\\r\\nHELP\\tUSER\\tPASS\\tQUIT\\tLIST\\tNLST\\nRETR\\tSTOR\\tCWD\\tTYPE\\tPORT\\tPWD\\nSTRU\\tMODE\\tALLO\\tACCT\\tPASV\\tNOOP\\nDELE\\n214 End of command list\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n214-The following commands are recognized:\\r\\nHELP\\tUSER\\tPASS\\tQUIT\\tLIST\\tNLST\\tCDUP\\r\\nRETR\\tSTOR\\tCWD\\tTYPE\\tPORT\\tPWD\\tXCUP\\r\\nSTRU\\tMODE\\tXCWD\\tALLO\\tACCT\\tXPWD\\tPASV\\r\\nNOOP\\tSYST\\r\\n214 End of command list\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 Opto 22 FTP server ready\\.\\r\\n502 HELP command not implemented, or not allowed\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^(?:220-.*\\r\\n)?220 .*\\r\\n530 Please login with USER and PASS\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n214- The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    REIN\\*   MODE    REST\\*   MKD     STAT\\*   EPSV    MRSQ\\*   XCUP \\r\\n   PASS    QUIT    RETR    RNFR    PWD     HELP    MLFL\\*   MRCP\\*   SIZE \\r\\n   ACCT\\*   PORT    STOR    RNTO    LIST    NOOP    MAIL\\*   XCWD    MDTM\\*\\r\\n   CWD     PASV    STOU\\*   ABOR    NLST    LPRT    MSND\\*   XMKD    FEAT\\*\\r\\n   CDUP    TYPE    APPE\\*   DELE    SITE\\*   LPSV    MSOM\\*   XRMD    OPTS\\*\\r\\n   SMNT\\*   STRU    ALLO\\*   RMD     SYST\\*   EPRT    MSAM\\*   XPWD \\r\\n214 End\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 ftp server ready\\r\\n502 Command not recognized\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\r\\n500 Invalid command HELP \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 FTP server ready\\.\\r\\n214- The following commands are recognized \\(\\* =>'s unimplemented\\)\\.\\r\\n   USER    PORT    TYPE    MLFL\\*   MRCP\\*   DELE    SYST    XMKD    XCUP \\r\\n   PASS    LPRT    STRU    MAIL\\*   ALLO    CWD     FEAT    RMD     STOU \\r\\n   ACCT\\*   EPRT    MODE    MSND\\*   REST    XCWD    STAT    XRMD    SIZE \\r\\n   SMNT\\*   PASV    RETR    MSOM\\*   RNFR    LIST    HELP    PWD     MDTM \\r\\n   REIN\\*   LPSV    STOR    MSAM\\*   RNTO    NLST    NOOP    XPWD \\r\\n   QUIT    EPSV    APPE    MRSQ\\*   ABOR    SITE    MKD     CDUP \\r\\n214 End\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n550 Command not recognized or allowed\\.\\r\\n$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n214-The following commands are recognized \\(\\* ==>'s unimplemented\\)\\.\\r\\n    ABOR \\r\\n    ACCT \\r\\n    ADAT \\*\\r\\n    ALLO \\r\\n    APPE \\r\\n    AUTH \\r\\n    CCC \\r\\n    CDUP \\r\\n    CWD \\r\\n    DELE \\r\\n    ENC \\*\\r\\n    EPRT \\r\\n    EPSV \\r\\n    FEAT \\r\\n    HELP \\r\\n    HOST \\r\\n    LANG \\r\\n    LIST \\r\\n    MDTM \\r\\n    MIC \\*\\r\\n    MKD \\r\\n    MODE \\r\\n    NLST \\r\\n    NOOP \\r\\n    OPTS \\r\\n    PASS \\r\\n    PASV \\r\\n    PBSZ \\r\\n    PORT \\r\\n    PROT \\r\\n    PWD \\r\\n    QUIT \\r\\n    REIN \\r\\n    REST \\r\\n    RETR \\r\\n    RMD \\r\\n    RNFR \\r\\n    RNTO \\r\\n    SITE \\r\\n    SIZE \\r\\n    SMNT \\r\\n    STAT \\r\\n    STOR \\r\\n    STOU \\r\\n    STRU \\r\\n    SYST \\r\\n    TYPE \\r\\n    USER \\r\\n    XCUP \\r\\n    XCWD \\r\\n    XMKD \\r\\n    XPWD \\r\\n    XRMD \\r\\n214 HELP command successful\\.\\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220[\\s-].*ftp[^\\r]*\\r\\n214[\\s-]"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 \\r\\n451 The parameter is incorrect\\. \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^220 .*\\r\\n451 The parameter is incorrect\\. \\r\\n"
+        },
+        {
+            "type": "perl",
+            "pattern": "^2[23]0 FTP Server Ready\\r\\n504 Comand length not supported\\.\\r\\n"
+        }
+    ]
+}

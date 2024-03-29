@@ -1,0 +1,11 @@
+{
+    "payloads": [
+        "GET / HTTP/1.0\r\n\r\n",
+    ],
+    "patterns": [
+        {
+            "type": "prefix",
+            "pattern": "WW\x00\x00"
+        }
+    ]
+}

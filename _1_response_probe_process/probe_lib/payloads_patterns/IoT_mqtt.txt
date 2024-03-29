@@ -1,0 +1,11 @@
+{
+    "payloads": [
+        "Probe TCP mqtt q|\\x10\\x10\\x00\\x04MQTT\\x04\\x02\\x00\\x1e\\x00\\x04nmap|"
+    ],
+    "patterns": [
+        {
+            "type": "perl",
+            "pattern": "^\\x20\\x02\\x00.$"
+        }
+    ]
+}

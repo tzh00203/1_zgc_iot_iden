@@ -1,0 +1,55 @@
+{
+    "payloads": [
+        "Probe TCP HELP4STOMP q|HELP\\n\\n\\0|"
+    ],
+    "patterns": [
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:270\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:254\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:241\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:267\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:266\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:268\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:269\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:270\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:244\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\ncontent-type:text/plain\\nmessage:Unknown STOMP action: HELP\\n\\norg\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolException: Unknown STOMP action: HELP\\r\\n\\tat org\\.apache\\.activemq\\.transport\\.stomp\\.ProtocolConverter\\.onStompCommand\\(ProtocolConverter\\.java:258\\)"
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\n(?:[^\\n]+\\n)?message:Unknown STOMP action:.+ org\\.apache\\.activemq\\."
+        },
+        {
+            "type": "perl",
+            "pattern": "^ERROR\\nmessage:Illegal command\\ncontent-type:text/plain\\nversion:([\\d.,]+)\\ncontent-length:\\d+\\n\\nYou must log in using CONNECT first\\0\\n"
+        }
+    ]
+}

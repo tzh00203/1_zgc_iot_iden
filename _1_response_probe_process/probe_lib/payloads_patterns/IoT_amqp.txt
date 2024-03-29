@@ -1,0 +1,15 @@
+{
+    "payloads": [
+        "Probe TCP GetRequest q|GET / HTTP/1.0\\r\\n\\r\\n|"
+    ],
+    "patterns": [
+        {
+            "type": "perl",
+            "pattern": "^AMQP\\x00\\x00\\x09\\x01$"
+        },
+        {
+            "type": "perl",
+            "pattern": "^AMQP\\x01\\x01\\x00\\x0a$"
+        }
+    ]
+}

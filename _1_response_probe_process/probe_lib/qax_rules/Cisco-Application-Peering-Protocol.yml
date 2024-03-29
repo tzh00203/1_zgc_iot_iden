@@ -1,0 +1,11 @@
+# fofa查询语法：protocol=="Cisco-Application-Peering-Protocol"
+#  194.186.47.157 5001
+name: "Cisco-Application-Peering-Protocol"
+ports:
+  tcp: [5001]
+
+rules:
+- payload: "\x00\x00\x00\x1f\x00\x00\x00\x00\x00\x00\x00\x0c\x47\x65\x74\x43\x6c\x61\x73\x73\x4e\x61\x6d\x65\x00\x00\x00\x02\x04\x00\x00\x00\x00\x01\x00"
+  patterns:
+  - type: prefix
+    pattern: "\x00\x01\x00"
