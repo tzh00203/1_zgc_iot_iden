@@ -1,5 +1,4 @@
-import mysql.connector
-from mysql_conf import cursor
+from mysql_conf import connection, cursor
 
 def select_type(type_id=None, type_name=None):
     try:
@@ -20,3 +19,23 @@ def select_type(type_id=None, type_name=None):
 
     except Exception as e:
         print(e)
+
+
+def insert_type(type_name):
+    try:
+        sql = "INSERT INTO type (name) VALUES (%s)"
+        cursor.execute(sql, (type_name,))
+        connection.commit()
+        print(f"[+]成功更新 {cursor.rowcount} 条记录")
+
+    except Exception as e:
+        print(e)
+
+
+def insert_type_from_txt(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            insert_type(line.strip().lower())
+
+
+insert_type_from_txt("type.txt")

@@ -1,26 +1,25 @@
-import mysql.connector
-from mysql_conf import mysql_config
+from mysql_conf import connection, cursor
 
 
-def select_product(product_id=None, product_name=None, vendor_id=None, type_id=None):
+def insert_product(vendor_name, type_name, product_name):
     try:
-        # 建立连接
-        cnx = mysql.connector.connect(**mysql_config)
-        cursor = cnx.cursor()
+        sql = f"""
+        INSERT INTO product (name, vendor_id, type_id) 
+        VALUES (%s, 
+                (SELECT vendor.id from vendor where vendor.name=%s), 
+                (SELECT type.id from type where type.name=%s))
+        """
+        cursor.execute(sql, (product_name, vendor_name, type_name))
+        connection.commit()
+        print(f"[+]成功更新 {cursor.rowcount} 条记录")
+    except Exception as e:
+        print(e)
 
-        # 执行查询
-        if product_id:
-            query = f"SELECT * FROM product WHERE id = {product_id}"
-            cursor.execute(query)
-        elif product_name:
-            query = f"SELECT * FROM product WHERE name = '{product_name}'"
-            cursor.execute(query)
 
-        # 打印查询结果
-        for (id, name, vendor_id, type_id) in cursor:
-            print(f"id: {id}, name: {name}, vendor_id: {vendor_id}, type_id: {type_id}")
+def insert_product_from_txt(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            insert_product(line.strip().split('_')[0].lower(), line.strip().split('_')[1].lower(), line.strip().split('_')[2].lower())
 
-    finally:
-        # 关闭连接
-        cursor.close()
-        cnx.close()
+
+insert_product_from_txt("product.txt")

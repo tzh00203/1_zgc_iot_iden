@@ -1,4 +1,3 @@
-import mysql.connector
 from mysql_conf import connection, cursor
 
 
@@ -36,3 +35,7 @@ def insert_vendor_from_txt(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         for line in f:
             insert_vendor(line.strip().lower())
+
+
+
+insert_vendor_from_txt("vendor.txt")
