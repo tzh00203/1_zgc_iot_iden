@@ -59,9 +59,9 @@ def sanitization_string(str_):
     str_ = re.sub(r'x[0-9a-fA-F]{2}', ' ', str_)    # 将xff十六进制过滤
     str_ = re.sub(r'\s+', ' ', str_)                # 多个空格匹配成为一个空格
     str_ = re.sub(r'-+', '-', str_)                 # 多个破折号匹配成为一个破折
-    str_ = re.sub(r'\s*.\s*', '', str_)             # 单个字符过滤掉
-    str_ = re.sub(r'^\w\s*', '', str_)              # 第一个单独字符和最后一个单独字符
-    str_ = re.sub(r'\s*\w$', '', str_)
+
+    str_ = ' '.join([char for char in str_.strip().split() if len(char) > 1])  # 匹配两侧空格字符串并将其删除
+
     return str_.lower()
 
 
@@ -82,6 +82,7 @@ def load_data():
 
 
 if __name__ == "__main__":
+    # print(sanitization_string("1*!1\r\n0�½\u0002\u0001\u0000\u0004\u0006public¢�¯\u0002\u0002e(\u0002\u0001\u0000\u0002\u0001\u00000�¢0�Ÿ\u0006\b+\u0006\u0001\u0002\u0001\u0001\u0001\u0000\u0004�’ZXR10 ROS Version V4.6.02D ZXR10 T64G Software, Version V2.6.02.d.16_p05 Copyright (c) 2001-2007 by ZTE Corporation Compiled Sep 6 2007, 14:24:04"))
     load_data()
 
 
