@@ -1,4 +1,4 @@
-import _3_crawler_util
+import __crawler_util
 import asyncio
 import openpyxl
 import os
@@ -37,7 +37,7 @@ def get_html_v1():
         try:
             cnt_html = 1
             # xlsx_html_detail = {query: [html1_data, html2_data, html3_data]}
-            html_data = _3_crawler_util.parse_google_search_results_v1(each_query, cnt_response)
+            html_data = __crawler_util.parse_google_search_results_v1(each_query, cnt_response)
 
             # for each_html in html_data[each_query]:
             #     # 将HTML字符串写入HTML文件
@@ -75,12 +75,12 @@ def get_html_v2():
         cnt_response += 1
         if each_query is None:
             continue
-        task = loop.create_task(_3_crawler_util.parse_google_search_results_v3(each_query, cnt_response))
+        task = loop.create_task(__crawler_util.parse_google_search_results_v3(each_query, cnt_response))
         tasks.append(task)
 
     t1 = time.time()
 
-    loop.run_until_complete(_3_crawler_util.parse_google_search_results_v3(response_data[end], cnt_response))
+    loop.run_until_complete(__crawler_util.parse_google_search_results_v3(response_data[end], cnt_response))
 
     print("aiohttp版爬虫总耗时：", time.time() - t1)
 
