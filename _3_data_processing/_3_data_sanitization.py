@@ -4,7 +4,7 @@ from __utils.__path_util import global_path
 from __utils.__save_file_util import save_dict_to_json, save_str_file, save_list_to_csv
 from __utils.__similarity_util import similarity
 from __utils.__unicode_util import unicode_calc_proportion, unicode_filter
-from __logs.__log import log_init, log_init_reverse_shell
+from __utils.__filter_util import html_filter, filter_dictionary_string
 import json
 from multiprocessing import Process
 
@@ -46,11 +46,12 @@ def sanitization_string(str_):
 
     # 处理http/https协议的responseData
     if str_.startswith("HTTP/"):
-        list_tmp_ = []
         # 将状态码为3XX和5XX的过滤掉
         if str_[len("HTTP/1.1 ")] in ['3', '5']:
             print("\thttp bad")
             return bad_str_
+        else:
+            str_ = html_filter(str_)
 
     str_ = unicode_filter(str_)
     # 对所有response作统一过滤
@@ -61,8 +62,12 @@ def sanitization_string(str_):
     str_ = re.sub(r'-+', '-', str_)                 # 多个破折号匹配成为一个破折
 
     str_ = ' '.join([char for char in str_.strip().split() if len(char) > 1])  # 匹配两侧空格字符串并将其删除
+    str_ = str_.lower()
 
-    return str_.lower()
+    # 去除stop words
+    str_ = filter_dictionary_string(str_)
+
+    return str_
 
 
 def load_data():
