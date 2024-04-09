@@ -35,7 +35,10 @@ def data_embedding():
     四维：[ 空格数量 换行数量 u占比 字符串长度 ]
     :return:
     """
-    embedding_dict = {}
+    embedding_dict = {
+            "natural language": [],
+            "unnatural language": []
+    }
     embedding_data_list = []
     all_response = eval(open(root_path + "raw_data/all_response.json", "r", encoding="utf-8").read())
     cnt = 0
@@ -54,14 +57,15 @@ def data_embedding():
         flag = 1
         if uu_pro > 0.2:
             flag = 0
-        embedding_dict[f"{cnt} {space_count} {uu_pro} {str_len}"] = {
-            "flag": flag,
-            "response_data": line
-        }
+
         embedding_data_list.append(
             [space_count, line_count, uu_pro, str_len, line]
         )
-    # save_dict_to_json(root_path + "raw_data/all_response_dichotomy_v1.json", embedding_dict)
+        if flag == 1:
+            embedding_dict["natural language"].append(line)
+        else:
+            embedding_dict["unnatural language"].append(line)
+    save_dict_to_json(root_path + "raw_data/all_response_dichotomy_v1.json", embedding_dict)
     return embedding_data_list
 
 
@@ -138,19 +142,17 @@ class K_Means(object):
 def calc():
     """[ [space_count, line_count, uu_pro, str_len, line] ... ]"""
     xx = data_embedding()
-    x = []
-    response = []
-    for ll in xx:
-        x.append([ ll[0] + 1, ll[1] + 1, ll[2], ll[3] ])
-        response.append(ll[-1])
-    x = np.array(x)
-    k_means = K_Means(response=response, k=2)
-    k_means.fit(x)
-    k_means.save_result()
-    print(k_means.centers_)
-    print(len(k_means.result_clf_list), len(xx))
-
-
+    # x = []
+    # response = []
+    # for ll in xx:
+    #     x.append([ ll[0] + 1, ll[1] + 1, ll[2], ll[3] ])
+    #     response.append(ll[-1])
+    # x = np.array(x)
+    # k_means = K_Means(response=response, k=2)
+    # k_means.fit(x)
+    # k_means.save_result()
+    # print(k_means.centers_)
+    # print(len(k_means.result_clf_list), len(xx))
 
     # for center in k_means.centers_:
     #     pyplot.scatter(k_means.centers_[center][0], k_means.centers_[center][1], marker='*', s=150)
