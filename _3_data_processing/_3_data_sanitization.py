@@ -61,6 +61,13 @@ def sanitization_string(str_):
     str_ = re.sub(r'\s+', ' ', str_)                # 多个空格匹配成为一个空格
     str_ = re.sub(r'-+', '-', str_)                 # 多个破折号匹配成为一个破折
 
+    '''处理.符号问题 多. 边缘.等'''
+    str_ = re.sub(r'\.+', '.', str_)
+    str_ = re.sub(r'\s*\.\s', ' ', str_)
+    str_ = re.sub(r'\s\.\s*', ' ', str_)
+    str_ = re.sub(r'\s*\.$', ' ', str_)
+    str_ = re.sub(r'^\.\s*', ' ', str_)
+
     str_ = ' '.join([char for char in str_.strip().split() if len(char) > 1])  # 匹配两侧空格字符串并将其删除
     str_ = str_.lower()
 
@@ -83,7 +90,7 @@ def load_data():
         clean_data = sanitization_string(line)
         result_dict["sanitization_data"].append(clean_data)
 
-    save_dict_to_json(global_path.__raw_data_path__ + "all_response_sanitization_v1.json", result_dict)
+    save_dict_to_json(global_path.__raw_data_path__ + "all_response_sanitization_v2.json", result_dict)
 
 
 if __name__ == "__main__":

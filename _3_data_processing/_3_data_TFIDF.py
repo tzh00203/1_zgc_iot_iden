@@ -17,10 +17,11 @@ class EXPLANATION:
     """
 
 
-raw_data_path = global_path.__raw_data_path__ + "all_response_sanitization_v1.json"
-corpus_path = global_path.__raw_data_path__ + "/crawler_corpus/all_response_corpus_v1.json"
-tfidf_path = global_path.__raw_data_path__ + "/crawler_corpus/all_response_tfidf_v1.json"
+raw_data_path = global_path.__raw_data_path__ + "all_response_sanitization_v2.json"
+corpus_path = global_path.__raw_data_path__ + "/crawler_corpus/all_response_corpus_v2.json"
+tfidf_path = global_path.__raw_data_path__ + "/crawler_corpus/all_response_tfidf_v2.json"
 key_words_num = 7
+
 
 def corpus_init():
     """
@@ -83,3 +84,4 @@ if __name__ == "__main__":
     corpus_, corpus_id_ = corpus_init()
     TFIDF_words_dict = TFIDF_calc(corpus_, corpus_id_)
     search_query_4crawler_setup(TFIDF_words_dict)
+

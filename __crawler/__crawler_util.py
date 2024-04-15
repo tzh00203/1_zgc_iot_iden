@@ -38,6 +38,7 @@ def google_search(query):
     retry_count = 5
     proxy = get_proxy().get("proxy")
     search_url = f"https://www.google.com/search?hl=en&q={query}&btnG=Search"
+
     while retry_count > 0:
         try:
             html = requests.get(search_url, proxies={"http": "http://{}".format(proxy)}, headers=headers)

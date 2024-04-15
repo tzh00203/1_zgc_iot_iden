@@ -1,9 +1,14 @@
 # -*-coding:utf-8-*-
 
 import logging
+import os
 
 
 def log_init(logFilename: str):
+    directory = os.path.dirname(logFilename)
+    # 检查目录是否存在，如果不存在则创建
+    if not os.path.exists(directory):
+        os.makedirs(directory)
 
     logging.basicConfig(
             level=logging.DEBUG,  # 定义输出到文件的log级别，大于此级别的都被输出

@@ -9,3 +9,5 @@ class global_path:
     __probe_payloads_patterns_root_path__ = "../_1_response_probe_process/probe_lib/payloads_patterns/"
     __2_response_pattern_result_path__ = "../_2_response_data_classify/"
     __raw_data_path__ = "../raw_data/"
+    __crawler_tfidf_path__ = __raw_data_path__ + "crawler_corpus/all_response_tfidf_v1.json"
+    __crawler_search_result_path__ = __raw_data_path__ + "crawler_search_result/"
