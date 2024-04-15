@@ -39,6 +39,8 @@ def bing_search(search_query):
         title = result.find("h2").text
         link = result.find("a")["href"]
         search_link.append(link)
+        if len(search_link) > 7:
+            break
 
     return search_link
 
