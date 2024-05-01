@@ -17,9 +17,9 @@ class EXPLANATION:
     """
 
 
-raw_data_path = global_path.__raw_data_path__ + "all_response_sanitization_v2.json"
-corpus_path = global_path.__raw_data_path__ + "/crawler_corpus/all_response_corpus_v2.json"
-tfidf_path = global_path.__raw_data_path__ + "/crawler_corpus/all_response_tfidf_v2.json"
+raw_data_path = global_path.__raw_data_path__ + "all_response_sanitization_v3.json"
+corpus_path = global_path.__raw_data_path__ + "/crawler_corpus/all_response_corpus_v3.json"
+tfidf_path = global_path.__raw_data_path__ + "/crawler_corpus/all_response_tfidf_v3.json"
 key_words_num = 7
 
 
