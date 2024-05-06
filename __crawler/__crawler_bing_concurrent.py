@@ -1,15 +1,10 @@
 """
 并发地通过tfidf筛选出的高频词汇进行bing引擎信息爬虫搜索
 """
-from __utils.__path_util import global_path
-from __utils.__sort_util import sort_dict
-from __utils.__save_file_util import save_dict_to_json, save_str_file, save_list_to_csv
-from __utils.__similarity_util import similarity
-from __logs.__log import log_init, log_init_reverse_shell
-from __crawler_bing_util import bing_search
-import json
-import re
 from multiprocessing import Process
+from __crawler_bing_util import bing_search
+from __logs.__log import log_init
+from __utils.__path_util import global_path
 
 tfidf_path = global_path.__crawler_tfidf_path__
 
