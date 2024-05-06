@@ -45,6 +45,14 @@ def unicode_calc_proportion(str_):
     return float(count/len(str_))
 
 
+def hex_calc_proportion(str_):
+    str_remove_hex = re.sub(r'\\x[0-9a-fA-F]{2}', '', str_)
+    result = float( 1 - len(str_remove_hex) / len(str_) )
+    print(str_remove_hex)
+
+    return result
+
+
 def unicode_filter(str_):
 
     new_str = ""
@@ -60,7 +68,20 @@ def unicode_filter(str_):
     return new_str
 
 
-if __name__ == "__main__":
-    print(unicode_filter("1*!1\r\n0�½\u0002\u0001\u0000\u0004\u0006public¢�¯\u0002\u0002e(\u0002\u0001\u0000\u0002\u0001\u00000�¢0�Ÿ\u0006\b+\u0006\u0001\u0002\u0001\u0001\u0001\u0000\u0004�’ZXR10 ROS Version V4.6.02D ZXR10 T64G Software, Version V2.6.02.d.16_p05 Copyright (c) 2001-2007 by ZTE Corporation Compiled Sep 6 2007, 14:24:04"))
+def punc_filter(str_):
+    new_str = ""
+    for cha in str_:
+        unicode_type = unicodedata.category(cha)
+        # print(cha)
+        if unicode_type in []:
+            if cha != ".":
+                cha = " "
+        new_str += cha
+    new_str = new_str.replace(",", " ")
+    new_str = re.sub(r'\s+', ' ', new_str)
+    return new_str
 
-    print(unicodedata.category("你"))
+
+if __name__ == "__main__":
+    print("RAW DATE: \"08\\x02\\x01\\x00\\x04\\x06public\\xa2+\\x02\\x02e(\\x02\\x01\\x00\\x02\\x01\\x000\\x1f0\\x1d\\x06\\b+\\x06\\x01\\x02\\x01\\x01\\x01\\x00\\x04\\x11RouterOS RB450Gx4\"\n")
+    print(hex_calc_proportion("RAW DATE: \"08\\x02\\x01\\x00\\x04\\x06public\\xa2+\\x02\\x02e(\\x02\\x01\\x00\\x02\\x01\\x000\\x1f0\\x1d\\x06\\b+\\x06\\x01\\x02\\x01\\x01\\x01\\x00\\x04\\x11RouterOS RB450Gx4\"\n"))

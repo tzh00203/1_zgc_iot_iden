@@ -70,10 +70,8 @@ def sanitization_string(str_):
 
     str_ = ' '.join([char for char in str_.strip().split() if len(char) > 1])  # 匹配两侧空格字符串并将其删除
     str_ = str_.lower()
-
     # 去除stop words
     str_ = filter_dictionary_string(str_)
-
     return str_
 
 
@@ -90,12 +88,12 @@ def load_data():
         clean_data = sanitization_string(line)
         result_dict["sanitization_data"].append(clean_data)
 
-    save_dict_to_json(global_path.__raw_data_path__ + "all_response_sanitization_v2.json", result_dict)
+    save_dict_to_json(global_path.__raw_data_path__ + "all_response_sanitization_v3.json", result_dict)
 
 
 if __name__ == "__main__":
-    # print(sanitization_string("1*!1\r\n0�½\u0002\u0001\u0000\u0004\u0006public¢�¯\u0002\u0002e(\u0002\u0001\u0000\u0002\u0001\u00000�¢0�Ÿ\u0006\b+\u0006\u0001\u0002\u0001\u0001\u0001\u0000\u0004�’ZXR10 ROS Version V4.6.02D ZXR10 T64G Software, Version V2.6.02.d.16_p05 Copyright (c) 2001-2007 by ZTE Corporation Compiled Sep 6 2007, 14:24:04"))
-    load_data()
+    print(sanitization_string("HTTP/1.1 404 Not Found\r\nServer: kong/2.8.1\r\nDate: Mon, 18 Dec 2023 08:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 48\r\nX-Kong-Response-Latency: 0\r\nConnection: close\r\n\r\n{\"message\":\"no Route matched with those values\"}"))
+    # load_data()
 
 
 
