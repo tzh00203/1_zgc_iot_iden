@@ -20,7 +20,7 @@ def load_tfidf():
     tfidf_search_index_list = list(tfidf_dict.keys())
     tfidf_search_words_dict = {}
     for index_ in tfidf_dict:
-        words_ = tfidf_dict[index_]
+        words_ = str(tfidf_dict[index_])
         if words_ not in tfidf_search_words_dict:
             tfidf_search_words_dict[words_] = [index_]
         else:
@@ -32,7 +32,8 @@ def load_tfidf():
 
 def crawler_concurrent(search_query, search_index, start: int, end: int):
     """
-    search_query一部分进行bing引擎搜索，得到每次搜索前十结果uri_web
+    search_query一部分进行引擎搜索，得到每次搜索前十结果uri_web
+    队列算法-FIFO
     [ [search_query_1], [search_query_2], [search_query_3], ... ]
     :param search_query:
     :param search_index:
@@ -47,7 +48,7 @@ def crawler_concurrent(search_query, search_index, start: int, end: int):
     poc_logger = log_init(logFilename=logger_path)
 
     for index in range(len(all_data_part)):
-        search_list, line_index = all_data_part[index], "_".join(all_index_part[index])
+        search_list, line_index = eval(all_data_part[index]), "_".join(all_index_part[index])
         query = " ".join(search_list)
         # query = query.replace(' + ', '%20%2B%20')
 
