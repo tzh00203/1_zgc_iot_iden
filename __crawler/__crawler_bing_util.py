@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from pprint import pprint
 
 headers_bing = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76'
@@ -10,7 +11,7 @@ def bing_search(search_query):
     """
     利用bing搜索引擎, 对search query发起网络信息获取
     返回搜索结果前10的uri列表
-    return: [ search_uri_1, search_uri_2, ... ]
+    :return: list [ list, list ]
     """
     url = f"https://cn.bing.com/search?q={search_query}&ensearch=1"
     retry_count = 3
@@ -41,4 +42,48 @@ def bing_search(search_query):
 
     return search_link
 
-# print(bing_search("TP-LINK"))
+
+def bing_api_search(search_query: str = "huawei usg-1200", retry_count: int = 5):
+    """
+    利用bing api搜索引擎, 对search query发起网络信息获取
+    返回搜索结果前10的uri列表
+    :return: list [ list, list ]
+    """
+    subscription_key = "1fc813569fce4956989059524d25e5a1"
+    search_url = "https://api.bing.microsoft.com/v7.0/search"
+
+    headers = {"Ocp-Apim-Subscription-Key": subscription_key}
+    params = {
+        "q": search_query,
+        "count": 30,
+        "responseFilter": "webpages",
+        # "textDecorations": True,
+        # "textFormat": "HTML"
+        }
+    while retry_count > 0:
+        try:
+            response = requests.get(search_url, headers=headers, params=params)
+            if response.status_code == 200 and response.text is not None:
+                search_results = response.json()
+                break
+            else:
+                retry_count -= 1
+        except Exception as e:
+            print(e)
+            retry_count -= 1
+
+    search_link = [[], []]
+    # 提取每个搜索结果的标题和链接, 并将其存储在search_link中, 返回的二维列表中0为link, 1为title
+    for result in search_results["webPages"]["value"]:
+        title = result["name"]
+        link = result["url"]
+        if link.startswith("http") and link[-4:] != ".pdf" and link not in search_link:
+            search_link[0].append(link)
+            search_link[1].append(title)
+
+    search_link = [search_link[0][:10], search_link[1][:10]]
+    return search_link
+
+
+if __name__ == "__main__":
+    pprint(bing_api_search())

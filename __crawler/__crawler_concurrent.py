@@ -2,7 +2,8 @@
 并发地通过tfidf筛选出的高频词汇进行bing引擎信息爬虫搜索
 """
 from multiprocessing import Process
-from __crawler_bing_util import bing_search
+from __crawler_bing_util import bing_api_search
+from __crawler_google_util import google_api_search
 from __logs.__log import log_init
 from __utils.__path_util import global_path
 
@@ -17,7 +18,16 @@ def load_tfidf():
     tfidf_dict = eval(open(tfidf_path, "r", encoding="utf-8").read())
     tfidf_search_query_list = list(tfidf_dict.values())
     tfidf_search_index_list = list(tfidf_dict.keys())
-    return tfidf_search_index_list, tfidf_search_query_list
+    tfidf_search_words_dict = {}
+    for index_ in tfidf_dict:
+        words_ = tfidf_dict[index_]
+        if words_ not in tfidf_search_words_dict:
+            tfidf_search_words_dict[words_] = [index_]
+        else:
+            tfidf_search_words_dict[words_].append(index_)
+    tfidf_search_query_list_ = list(tfidf_search_words_dict.keys())
+    tfidf_search_index_list_ = list(tfidf_search_words_dict.values())
+    return tfidf_search_index_list_, tfidf_search_query_list_
 
 
 def crawler_concurrent(search_query, search_index, start: int, end: int):
@@ -37,20 +47,23 @@ def crawler_concurrent(search_query, search_index, start: int, end: int):
     poc_logger = log_init(logFilename=logger_path)
 
     for index in range(len(all_data_part)):
-        search_list, line_index = all_data_part[index], all_index_part[index]
-        uri_query = " ".join(search_list)
-        uri_list = bing_search(uri_query)
+        search_list, line_index = all_data_part[index], "_".join(all_index_part[index])
+        query = " ".join(search_list)
+        # query = query.replace(' + ', '%20%2B%20')
+
+        uri_list, title_list = bing_api_search(query)
         if len(uri_list) > 0:
             for uri in uri_list:
                 poc_logger.info(f"{line_index} line in sanitization.json :search uri: {uri}")
         else:
-            poc_logger.info(f"{line_index} line in sanitization.json bing searched no result!")
+            poc_logger.info(f"{line_index} line in sanitization.json google searched no result!")
 
 
 if __name__ == "__main__":
 
     search_index_, search_query_ = load_tfidf()
     total_number = len(search_query_)
+
     print(f"The total bing search cnt: {total_number}")
     process_number = 10
     delta = int(total_number / process_number)
@@ -58,5 +71,5 @@ if __name__ == "__main__":
         start, end = i * delta, (i + 1) * delta - 1
         if end >= total_number:
             end = total_number - 1
-        p = Process(target=bing_search, args=(search_query_, search_index_, start, end))
+        p = Process(target=bing_api_search, args=(search_query_, search_index_, start, end))
         p.start()
