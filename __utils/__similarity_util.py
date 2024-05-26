@@ -218,3 +218,7 @@ def cos_similarity(s1, s2):
         result = 0.0
     # print(result)
     return result
+
+
+if __name__ == "__main__":
+    print(similarity("asp", "ap"))

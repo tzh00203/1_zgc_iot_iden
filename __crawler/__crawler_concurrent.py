@@ -2,10 +2,11 @@
 并发地通过tfidf筛选出的高频词汇进行bing引擎信息爬虫搜索
 """
 from multiprocessing import Process
-from __crawler_bing_util import bing_api_search
-from __crawler_google_util import google_api_search
+from __crawler_bing_util import bing_api_search, bing_search
+from __crawler_google_util import google_api_search, google_search
 from __logs.__log import log_init
 from __utils.__path_util import global_path
+import time
 
 tfidf_path = global_path.__crawler_tfidf_path__
 
@@ -44,20 +45,34 @@ def crawler_concurrent(search_query, search_index, start: int, end: int):
 
     all_data_part = search_query[start: end + 1]
     all_index_part = search_index[start: end + 1]
+    num = len(all_data_part)
     logger_path = global_path.__crawler_search_result_path__ + f"search_log/search_uri_{start}_{end}.log"
     poc_logger = log_init(logFilename=logger_path)
 
+    import queue
+
+    myQueue = queue.Queue(num)
     for index in range(len(all_data_part)):
         search_list, line_index = eval(all_data_part[index]), "_".join(all_index_part[index])
         query = " ".join(search_list)
+        myQueue.put([
+            query, line_index
+        ])
         # query = query.replace(' + ', '%20%2B%20')
-
-        uri_list, title_list = bing_api_search(query)
+    while myQueue.empty() is not True:
+        query, line_index = myQueue.get()
+        poc_logger.info("=====================" + str(myQueue.qsize()) + "=====================")
+        search_list = bing_api_search(query)
+        uri_list = search_list[0]
         if len(uri_list) > 0:
             for uri in uri_list:
                 poc_logger.info(f"{line_index} line in sanitization.json :search uri: {uri}")
         else:
-            poc_logger.info(f"{line_index} line in sanitization.json google searched no result!")
+            # poc_logger.info(f"{line_index} line in sanitization.json google searched no result!")
+            myQueue.put([
+                query, line_index
+            ])
+        # time.sleep(0.1)
 
 
 if __name__ == "__main__":
@@ -66,11 +81,11 @@ if __name__ == "__main__":
     total_number = len(search_query_)
 
     print(f"The total bing search cnt: {total_number}")
-    process_number = 10
+    process_number = 5
     delta = int(total_number / process_number)
     for i in range(process_number):
         start, end = i * delta, (i + 1) * delta - 1
         if end >= total_number:
             end = total_number - 1
-        p = Process(target=bing_api_search, args=(search_query_, search_index_, start, end))
+        p = Process(target=crawler_concurrent, args=(search_query_, search_index_, start, end))
         p.start()

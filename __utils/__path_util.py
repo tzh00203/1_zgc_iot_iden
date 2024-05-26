@@ -11,3 +11,5 @@ class global_path:
     __raw_data_path__ = "D://0_kindofstudy//NISL//ZGC4//1_zgc_iot_iden//raw_data/"
     __crawler_tfidf_path__ = __raw_data_path__ + "crawler_corpus/all_response_tfidf_v3.json"
     __crawler_search_result_path__ = __raw_data_path__ + "crawler_search_result/"
+
+    __assets_library_path__ = "D://0_kindofstudy//NISL//ZGC4//1_zgc_iot_iden//__assets_tree/"

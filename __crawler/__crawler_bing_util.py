@@ -43,7 +43,7 @@ def bing_search(search_query):
     return search_link
 
 
-def bing_api_search(search_query: str = "huawei usg-1200", retry_count: int = 5):
+def bing_api_search(search_query: str = "usg 1100", retry_count: int = 5):
     """
     利用bing api搜索引擎, 对search query发起网络信息获取
     返回搜索结果前10的uri列表
@@ -55,14 +55,17 @@ def bing_api_search(search_query: str = "huawei usg-1200", retry_count: int = 5)
     headers = {"Ocp-Apim-Subscription-Key": subscription_key}
     params = {
         "q": search_query,
-        "count": 30,
+        "count": 15,
         "responseFilter": "webpages",
+        "mkt": 'en-US'
         # "textDecorations": True,
         # "textFormat": "HTML"
         }
+    search_results = None
     while retry_count > 0:
         try:
             response = requests.get(search_url, headers=headers, params=params)
+            print(response.status_code, response.headers, response.text)
             if response.status_code == 200 and response.text is not None:
                 search_results = response.json()
                 break
@@ -73,6 +76,8 @@ def bing_api_search(search_query: str = "huawei usg-1200", retry_count: int = 5)
             retry_count -= 1
 
     search_link = [[], []]
+    if search_results is None or "webPages" not in search_results:
+        return search_link
     # 提取每个搜索结果的标题和链接, 并将其存储在search_link中, 返回的二维列表中0为link, 1为title
     for result in search_results["webPages"]["value"]:
         title = result["name"]
@@ -87,3 +92,4 @@ def bing_api_search(search_query: str = "huawei usg-1200", retry_count: int = 5)
 
 if __name__ == "__main__":
     pprint(bing_api_search())
+    

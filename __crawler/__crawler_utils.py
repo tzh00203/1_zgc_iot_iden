@@ -36,3 +36,22 @@ def load_keywords_from_tfidf(json_file_path: str = None, json_str: str = None):
         if item not in keywords:
             keywords.append(item)
     return keywords
+
+
+def common_request(search_url, retry_count: int = 5):
+    search_results = None
+    while retry_count > 0:
+        try:
+            response = requests.get(search_url)
+            if response.status_code == 200 and response.text is not None:
+                search_results = response.text
+                break
+            else:
+                retry_count -= 1
+        except Exception as e:
+            print(e)
+            retry_count -= 1
+
+    return search_results
+
+

@@ -22,6 +22,7 @@ def google_search(query: str, proxy: str = None, retry_count: int = 5, headers: 
     # if proxy is None:
     #     proxy = get_proxy().get("proxy")
     url = f"https://www.google.com/search?hl=en&q={query}&btnG=Search"
+    html_content = None
     while retry_count > 0:
         try:
             html = requests.get(url, headers=headers)
@@ -34,7 +35,8 @@ def google_search(query: str, proxy: str = None, retry_count: int = 5, headers: 
             print(e)
             retry_count -= 1
 
-    # delete_proxy(proxy)
+    if html_content is None:
+        return [[], []]
     soup = BeautifulSoup(html_content, "html.parser")
     search_results = soup.find_all("div", class_="g")
     search_link = [[], []]
