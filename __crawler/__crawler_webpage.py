@@ -260,7 +260,7 @@ def local_dependency_match(vendor_list, type_list, start: int, end: int):
 
 
 if __name__ == "__main__":
-    type_list, vendor_list = load_iot_assets_library()
+    # type_list, vendor_list = load_iot_assets_library()
     search_webpage_line, search_webpage_uri = load_uri_log()
     total_number = len(search_webpage_line)
 
