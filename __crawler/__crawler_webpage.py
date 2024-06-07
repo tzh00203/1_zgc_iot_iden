@@ -13,6 +13,8 @@ from __utils.__save_file_util import save_dict_to_json
 from __crawler_utils import common_request, crawler_html_filter
 from _3_data_processing._3_data_sanitization import sanitization_string
 
+webpage_info_local_dict = {}
+
 
 def load_iot_assets_library():
     iot_assets_path =global_path.__assets_library_path__
@@ -98,18 +100,28 @@ def webpage_concurrent(webpage_line, webpage_uri, start: int, end: int):
         cnt += 1
         each_index_uri_flag = 0
         for uri_ in uri_list_tmp:
-            response_html = common_request(uri_)
             sanitization_res_html_dict = {
                 "uri": uri_,
                 "title": "null",
                 "web_info": "null"
             }
-            if response_html is None:
-                poc_logger.info(f"failed {line_str} webpage uri: "+uri_)
+
+            if uri_ in webpage_info_local_dict:
+                sanitization_res_html_dict["title"] = webpage_info_local_dict[uri_]["title"]
+                sanitization_res_html_dict["web_info"] = webpage_info_local_dict[uri_]["web_info"]
             else:
-                each_index_uri_flag = 1
-                poc_logger.info(f"succeed {line_str} webpage uri: "+uri_)
-                sanitization_res_html_dict = crawler_html_filter(uri_, response_html)
+                response_html = common_request(uri_)
+                if response_html is None:
+                    poc_logger.info(f"failed {line_str} webpage uri: "+uri_)
+                else:
+                    each_index_uri_flag = 1
+                    poc_logger.info(f"succeed {line_str} webpage uri: "+uri_)
+                    sanitization_res_html_dict = crawler_html_filter(uri_, response_html)
+                    if sanitization_res_html_dict["uri"] not in webpage_info_local_dict:
+                        webpage_info_local_dict[sanitization_res_html_dict["uri"]] = {
+                            "title": sanitization_res_html_dict["title"],
+                            "web_info": sanitization_res_html_dict["web_info"]
+                        }
 
             if line_str in result_str:
                 result_str[line_str].append(sanitization_res_html_dict)
@@ -230,6 +242,7 @@ def local_dependency_match(vendor_list, type_list, start: int, end: int):
                     elif word_product_re_pattern(word_next):
                         words_vendor_product = word_ + "(vendor)_" + word_next + "(product)" if flag == 1 else word_ + "(type)_" + word_next + "(product)"
                         words_assets_tmp = words_vendor_product
+
                         if word_index + 1 < len(sanitization_str_words_list_tmp) and sanitization_str_words_list_tmp[word_index+1] in iot_list2:
                             words_assets_tmp += "_" + sanitization_str_words_list_tmp[word_index+1] + "(type)" if flag == 1 else "_" + sanitization_str_words_list_tmp[word_index+1] + "(vendor)"
                             word_index += 1
@@ -252,7 +265,7 @@ if __name__ == "__main__":
     total_number = len(search_webpage_line)
 
     print(f"The total webpage cnt: {total_number}")
-    process_number = 10
+    process_number = 1
 
     delta = int(total_number / process_number)
     for i in range(process_number):
