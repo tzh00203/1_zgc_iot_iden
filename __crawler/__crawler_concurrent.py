@@ -17,9 +17,11 @@ def load_tfidf():
     :return:
     """
     tfidf_dict = eval(open(tfidf_path, "r", encoding="utf-8").read())
+
     tfidf_search_query_list = list(tfidf_dict.values())
     tfidf_search_index_list = list(tfidf_dict.keys())
     tfidf_search_words_dict = {}
+
     for index_ in tfidf_dict:
         words_ = str(tfidf_dict[index_])
         if words_ not in tfidf_search_words_dict:

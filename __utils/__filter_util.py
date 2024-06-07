@@ -1,9 +1,10 @@
 import re
 from bs4 import BeautifulSoup
-
+from __utils.__path_util import global_path
 word_dictionary_path = '../_4_DER/dictionary_words'
 # prepare the dictionary
 dictionary_words_list = open(word_dictionary_path, "r", encoding="utf-8").read().replace(" ", "").split("\n")
+blacklist = open(global_path.__dictionary_path__ + '黑名单.txt', 'r', encoding='utf-8').read().split(',')
 
 
 def filter_format_symbol(text: str):
@@ -39,13 +40,15 @@ def filter_keyword_list_string(keyword_list, ori_string: str):
 
     for string_word in string_words_list:
         flag = 0
+        key_str = None
         for key_word in keyword_list:
             _, similarity_value = similarity(string_word, key_word)
-            if similarity_value > 0.89:
+            if similarity_value > 0.90:
                 flag = 1
+                key_str = key_word + "_" + string_word
                 break
-        if flag == 1 and string_word not in result_word_list:
-            result_word_list.append(string_word)
+        if flag == 1 and key_str not in result_word_list:
+            result_word_list.append(key_str)
 
     return result_word_list
 
@@ -70,6 +73,7 @@ def filter_dictionary_string(ori_string):
     """
     clean_list = []
     for word in ori_string.split(" "):
+        # if word in blacklist or word.isdigit() or (len(word) > 25 or len(word) == 1):
         if word in dictionary_words_list:
             continue
         clean_list.append(word)

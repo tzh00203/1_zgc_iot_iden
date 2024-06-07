@@ -49,7 +49,8 @@ def bing_api_search(search_query: str = "usg 1100", retry_count: int = 5):
     返回搜索结果前10的uri列表
     :return: list [ list, list ]
     """
-    subscription_key = "1fc813569fce4956989059524d25e5a1"
+    # subscription_key = "1fc813569fce4956989059524d25e5a1"
+    subscription_key = "55b005939e8e4244b7559a7486818b5a"
     search_url = "https://api.bing.microsoft.com/v7.0/search"
 
     headers = {"Ocp-Apim-Subscription-Key": subscription_key}
